@@ -487,22 +487,57 @@
 <a href="https://wa.me/919656181249?text=Hello%20Haritha%20Garden!" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 
 <!-- Admin Modal -->
+<!-- Admin Modal -->
 <div id="adminModal" class="admin-modal">
   <div class="admin-modal-content">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
       <h2><i class="fas fa-crown"></i> Admin Login</h2>
-      <button id="closeAdminPanelBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      <button
+        id="closeAdminPanelBtn"
+        style="background:none; border:none; font-size:1.5rem; cursor:pointer;"
+      >
+        &times;
+      </button>
     </div>
+
+    <!-- Login View -->
     <div id="adminLoginView">
-      <input type="password" id="adminPassword" placeholder="Enter Password" autocomplete="off" style="width:100%; padding:12px; border-radius:40px; border:1px solid #ccc;">
-      <button class="admin-login-btn" id="loginAdminBtn">Login</button>
-      <div id="loginError" style="color:red; text-align:center; margin-top:8px;"></div>
-      <div style="text-align:center; margin-top:12px; font-size:0.8rem;">🔐 Password: <strong>vampirehub</strong></div>
+      <input
+        type="password"
+        id="adminPassword"
+        placeholder="Enter Password"
+        autocomplete="off"
+        style="width:100%; padding:12px; border-radius:40px; border:1px solid #ccc;"
+      >
+
+      <button class="admin-login-btn" id="loginAdminBtn">
+        Login
+      </button>
+
+      <div
+        id="loginError"
+        style="color:red; text-align:center; margin-top:8px;"
+      ></div>
+
+      <!-- Password hint removed so customers cannot see the password -->
     </div>
+
+    <!-- Admin Edit View -->
     <div id="adminEditView" style="display:none;">
-      <div style="text-align:right;"><button id="logoutAdminBtn" style="background:#e2e8f0; border:none; padding:4px 12px; border-radius:30px;">Logout</button></div>
+      <div style="text-align:right;">
+        <button
+          id="logoutAdminBtn"
+          style="background:#e2e8f0; border:none; padding:4px 12px; border-radius:30px;"
+        >
+          Logout
+        </button>
+      </div>
+
       <div id="priceEditList" style="max-height:60vh; overflow-y:auto;"></div>
-      <button class="close-admin" id="closeAdminEditBtn">Close Panel</button>
+
+      <button class="close-admin" id="closeAdminEditBtn">
+        Close Panel
+      </button>
     </div>
   </div>
 </div>
@@ -565,7 +600,7 @@
     <section><h2 class="section-title"><i class="fas fa-water"></i> Lotus Pond & Rock Garden</h2>
       <div class="feature-grid">
         <div class="feature-card"><i class="fas fa-lotus"></i><h3>Natural Lotus Pond</h3><p>Bio-filter ponds with lilies & koi</p></div>
-        <div class="feature-card"><i class="fas fa-mountain"></i><h3>Japanese Rock Garden</h3><p>Zen boulders, moss, gravel streams</p></div>
+        <div class="feature-card"><i class="fas fa-mountain"></i><h3> Rock Garden</h3><p>Zen boulders, moss, gravel streams</p></div>
         <div class="feature-card"><i class="fas fa-frog"></i><h3>Waterfall Integration</h3><p>Natural stone waterfalls</p></div>
       </div>
       <div style="text-align:center;"><a href="https://wa.me/919656181249" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Custom Quote</a></div>
