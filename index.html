@@ -252,6 +252,7 @@
         transform: translateX(0);
       }
     }
+    /* Exit animation for pages (optional subtle) */
     .page.page-exit {
       animation: pageSlideOut 0.3s ease forwards;
     }
@@ -303,7 +304,7 @@
     }
     .section-sub { text-align: center; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.85rem; }
 
-    /* ========== HERO SECTION WITH LOCAL IMAGE ========== */
+    /* ========== HERO SECTION - MOBILE OPTIMIZED ========== */
     .hero {
       min-height: 75vh;
       display: flex;
@@ -315,15 +316,16 @@
       border-radius: 0 0 30px 30px;
       overflow: hidden;
     }
-    /* Hero background using <img> tag - LOCAL IMAGE PATH */
-    .hero-bg-img {
+    .hero-bg-image {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center 35%;
+      background-image: url('images/lanscaping.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
       z-index: 0;
       filter: brightness(0.88) contrast(1.05);
     }
@@ -620,11 +622,10 @@
 </div>
 
 <main>
-  <!-- HOME PAGE WITH LOCAL IMAGE src="images/hero.jpg" -->
+  <!-- HOME PAGE -->
   <div id="home-page" class="page active-page-content">
     <div class="hero">
-      <!-- LOCAL HERO IMAGE - using <img> tag as requested -->
-      <img src="images/lanscaping.jpg';">
+      <div class="hero-bg-image"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-brand">Haritha Garden 🌿</h1>
@@ -640,7 +641,7 @@
           <span><i class="fas fa-water"></i> Lotus Ponds</span>
         </div>
       </div>
-      <div class="image-credit"><i class="fas fa-camera"></i> Haritha Garden</div>
+      <div class="image-credit"><i class="fas fa-camera"></i> Landscaping</div>
     </div>
   </div>
 
@@ -711,18 +712,24 @@
       return;
     }
     
+    // Add exit animation to current page
     if (currentPage) {
       currentPage.classList.add('page-exit');
       setTimeout(() => {
         currentPage.classList.remove('active-page-content');
         currentPage.classList.remove('page-exit');
+        
+        // Show target page with entrance animation
         targetPage.classList.add('active-page-content');
+        
+        // Update active nav button
         document.querySelectorAll('.nav-option').forEach(btn => {
           btn.classList.remove('active-page');
           if (btn.getAttribute('data-page') === pageId) {
             btn.classList.add('active-page');
           }
         });
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
         isAnimating = false;
       }, 250);
