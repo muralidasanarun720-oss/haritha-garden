@@ -233,6 +233,9 @@
     }
     .price-edit-item input { flex: 1; padding: 8px; border-radius: 30px; border: 1px solid #cbd5e1; }
     .save-price-btn { background: var(--primary-blue); color: white; border: none; padding: 6px 18px; border-radius: 30px; cursor: pointer; }
+    .image-edit-group { width: 100%; margin-top: 5px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .image-url-input { flex: 2; font-size: 0.75rem; padding: 6px 10px; border-radius: 30px; border: 1px solid #cbd5e1; }
+    .update-img-btn { background: #2563eb; padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; }
 
     /* ========== PAGES WITH ANIMATION ========== */
     .page {
@@ -252,7 +255,6 @@
         transform: translateX(0);
       }
     }
-    /* Exit animation for pages (optional subtle) */
     .page.page-exit {
       animation: pageSlideOut 0.3s ease forwards;
     }
@@ -322,7 +324,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('images/lanscaping.jpg');
+      background-image: url('https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=1200');
       background-size: cover;
       background-position: center 35%;
       background-repeat: no-repeat;
@@ -443,7 +445,7 @@
     .stone-img, .plant-img, .pebble-img, .project-img, .lawn-img {
       background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
       border-radius: 16px;
-      height: 160px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -551,7 +553,6 @@
       border-radius: 20px;
     }
 
-    /* Tablet */
     @media (min-width: 768px) {
       .nav-container { flex-direction: row; justify-content: space-between; align-items: center; }
       .nav-top { flex: 0.5; }
@@ -567,7 +568,7 @@
     @media (max-width: 480px) {
       .hero-content { padding: 1rem; }
       .hero-brand { font-size: 1.6rem; }
-      .stone-img, .plant-img, .pebble-img, .lawn-img { height: 140px; }
+      .stone-img, .plant-img, .pebble-img, .lawn-img { height: 150px; }
       .price-tag { font-size: 1rem; }
     }
   </style>
@@ -655,14 +656,16 @@
 
 <footer>
   <p><i class="fas fa-map-marker-alt"></i> Haritha Garden — Kerala Landscaping Specialists</p>
-  <p>📍 PALAKKAD | KAVASSERY | PADOOR | 📞 +91 7025371249</p>
+  <p> PALAKKAD | KAVASSERY | PADOOR |  +91 7025371249</p>
   <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</p>
 </footer>
 
 <script>
-  // Product Data
+  // ================= SIMPLE IMAGE MANAGEMENT =================
+  // All images stored in easy-to-edit lists - just change the URL!
+  // You can replace any image URL with your own (local path or online image)
   let stonesData = [
-    { id: "stone1", name: "Bangalore Stone", img: "images/Bangalore Stone?auto=compress&cs=tinysrgb&w=600", desc: "Premium granite finish, weather-resistant.", price: "₹125 /sqft" },
+    { id: "stone1", name: "Bangalore Stone", img: "https://images.pexels.com/photos/1156877/pexels-photo-1156877.jpeg?auto=compress&cs=tinysrgb&w=600", desc: "Premium granite finish, weather-resistant.", price: "₹125 /sqft" },
     { id: "stone2", name: "Tandoor Stone", img: "https://images.pexels.com/photos/210314/pexels-photo-210314.jpeg?auto=compress&cs=tinysrgb&w=600", desc: "Warm terracotta tones, heat resistant.", price: "₹98 /sqft" },
     { id: "stone3", name: "Kotta Stone", img: "https://images.pexels.com/photos/157008/flooring-floor-tiles-grey-black-157008.jpeg?auto=compress&cs=tinysrgb&w=600", desc: "Traditional slate, non-slip finish.", price: "₹145 /sqft" }
   ];
@@ -688,48 +691,72 @@
     { title: "Stone Paving Villa", desc: "Bangalore stone driveway.", icon: "🏡" }
   ];
 
-  function saveAll() { localStorage.setItem("haritha_stones",JSON.stringify(stonesData)); localStorage.setItem("haritha_plants",JSON.stringify(plantsData)); localStorage.setItem("haritha_pebbles",JSON.stringify(pebblesData)); localStorage.setItem("haritha_lawn",JSON.stringify(lawnData)); }
+  function saveAllToStorage() { localStorage.setItem("haritha_stones",JSON.stringify(stonesData)); localStorage.setItem("haritha_plants",JSON.stringify(plantsData)); localStorage.setItem("haritha_pebbles",JSON.stringify(pebblesData)); localStorage.setItem("haritha_lawn",JSON.stringify(lawnData)); }
   function loadFromStorage() { let s=localStorage.getItem("haritha_stones"); if(s) stonesData=JSON.parse(s); let p=localStorage.getItem("haritha_plants"); if(p) plantsData=JSON.parse(p); let pe=localStorage.getItem("haritha_pebbles"); if(pe) pebblesData=JSON.parse(pe); let l=localStorage.getItem("haritha_lawn"); if(l) lawnData=JSON.parse(l); }
+  
+  // Simple universal render with image update support
   function renderAll() {
-    document.getElementById('stoneGrid').innerHTML = stonesData.map(s=>`<div class="stone-card"><div class="stone-img"><img src="${s.img}" alt="${s.name}" class="card-image" loading="lazy"></div><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`).join('');
-    document.getElementById('plantGrid').innerHTML = plantsData.map(p=>`<div class="plant-card"><div class="plant-img"><img src="${p.img}" alt="${p.name}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('pebblesGrid').innerHTML = pebblesData.map(p=>`<div class="pebble-card"><div class="pebble-img"><img src="${p.img}" alt="${p.name}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('lawnGrid').innerHTML = lawnData.map(l=>`<div class="lawn-card"><div class="lawn-img"><img src="${l.img}" alt="${l.name}" class="card-image" loading="lazy"></div><h3>${l.name}</h3><p>${l.desc}</p><div class="price-tag">${l.price}</div></div>`).join('');
+    document.getElementById('stoneGrid').innerHTML = stonesData.map(s=>`<div class="stone-card" data-id="${s.id}" data-type="stones"><div class="stone-img"><img src="${s.img}" alt="${s.name}" class="card-image" loading="lazy"></div><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`).join('');
+    document.getElementById('plantGrid').innerHTML = plantsData.map(p=>`<div class="plant-card" data-id="${p.id}" data-type="plants"><div class="plant-img"><img src="${p.img}" alt="${p.name}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
+    document.getElementById('pebblesGrid').innerHTML = pebblesData.map(p=>`<div class="pebble-card" data-id="${p.id}" data-type="pebbles"><div class="pebble-img"><img src="${p.img}" alt="${p.name}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
+    document.getElementById('lawnGrid').innerHTML = lawnData.map(l=>`<div class="lawn-card" data-id="${l.id}" data-type="lawn"><div class="lawn-img"><img src="${l.img}" alt="${l.name}" class="card-image" loading="lazy"></div><h3>${l.name}</h3><p>${l.desc}</p><div class="price-tag">${l.price}</div></div>`).join('');
     document.getElementById('projectGrid').innerHTML = projectsData.map(proj=>`<div class="project-card"><div class="project-img"><i class="fas fa-tree" style="font-size:2.5rem;"></i></div><h3>${proj.title}</h3><p>${proj.desc}</p></div>`).join('');
   }
+
+  // Admin image update functions - SUPER SIMPLE: just change image URL
+  window.updateItemImage = (type, id) => {
+    let newImgUrl = document.getElementById(`img-edit-${id}`).value.trim();
+    if(!newImgUrl) { alert("Please enter a valid image URL"); return; }
+    let targetArray;
+    if(type === 'stones') targetArray = stonesData;
+    else if(type === 'plants') targetArray = plantsData;
+    else if(type === 'pebbles') targetArray = pebblesData;
+    else if(type === 'lawn') targetArray = lawnData;
+    let item = targetArray.find(i => i.id === id);
+    if(item) { item.img = newImgUrl; saveAllToStorage(); renderAll(); alert(`Image updated for ${item.name}!`); refreshAdminPanel(); }
+  };
+
+  function refreshAdminPanel() {
+    if(document.getElementById('adminEditView').style.display !== 'block') return;
+    let html = '<h3>🏔️ Stone Prices & Images</h3>';
+    stonesData.forEach(s=>{ html+=`<div class="price-edit-item"><div><strong>${s.name}</strong></div><input id="edit-${s.id}" value="${s.price}"><button class="save-price-btn" onclick="updateItem('stones','${s.id}')">Save Price</button><div class="image-edit-group"><input type="text" id="img-edit-${s.id}" value="${s.img}" placeholder="Image URL" class="image-url-input"><button class="update-img-btn save-price-btn" onclick="updateItemImage('stones','${s.id}')">Change Image</button></div></div>`; });
+    html += '<h3>🌿 Plant Prices & Images</h3>';
+    plantsData.forEach(p=>{ html+=`<div class="price-edit-item"><div><strong>${p.name}</strong></div><input id="edit-${p.id}" value="${p.price}"><button class="save-price-btn" onclick="updateItem('plants','${p.id}')">Save Price</button><div class="image-edit-group"><input type="text" id="img-edit-${p.id}" value="${p.img}" class="image-url-input"><button class="update-img-btn save-price-btn" onclick="updateItemImage('plants','${p.id}')">Change Image</button></div></div>`; });
+    html += '<h3>🪨 Pebble Prices & Images</h3>';
+    pebblesData.forEach(pb=>{ html+=`<div class="price-edit-item"><div><strong>${pb.name}</strong></div><input id="edit-${pb.id}" value="${pb.price}"><button class="save-price-btn" onclick="updateItem('pebbles','${pb.id}')">Save Price</button><div class="image-edit-group"><input type="text" id="img-edit-${pb.id}" value="${pb.img}" class="image-url-input"><button class="update-img-btn save-price-btn" onclick="updateItemImage('pebbles','${pb.id}')">Change Image</button></div></div>`; });
+    html += '<h3>🌱 Lawn Prices & Images</h3>';
+    lawnData.forEach(l=>{ html+=`<div class="price-edit-item"><div><strong>${l.name}</strong></div><input id="edit-${l.id}" value="${l.price}"><button class="save-price-btn" onclick="updateItem('lawn','${l.id}')">Save Price</button><div class="image-edit-group"><input type="text" id="img-edit-${l.id}" value="${l.img}" class="image-url-input"><button class="update-img-btn save-price-btn" onclick="updateItemImage('lawn','${l.id}')">Change Image</button></div></div>`; });
+    document.getElementById('priceEditList').innerHTML = html;
+  }
+
+  window.updateItem = (type, id) => {
+    let newVal = document.getElementById(`edit-${id}`).value;
+    if(!newVal) return;
+    if(type==='stones'){ let item=stonesData.find(s=>s.id===id); if(item) item.price=newVal; }
+    if(type==='plants'){ let item=plantsData.find(p=>p.id===id); if(item) item.price=newVal; }
+    if(type==='pebbles'){ let item=pebblesData.find(p=>p.id===id); if(item) item.price=newVal; }
+    if(type==='lawn'){ let item=lawnData.find(l=>l.id===id); if(item) item.price=newVal; }
+    saveAllToStorage(); renderAll(); alert("Price updated!"); refreshAdminPanel();
+  };
 
   // Page switching with animation
   let isAnimating = false;
   function switchToPage(pageId) {
     if (isAnimating) return;
     isAnimating = true;
-    
     const currentPage = document.querySelector('.page.active-page-content');
     const targetPage = document.getElementById(`${pageId}-page`);
-    
-    if (!targetPage || currentPage === targetPage) {
-      isAnimating = false;
-      return;
-    }
-    
-    // Add exit animation to current page
+    if (!targetPage || currentPage === targetPage) { isAnimating = false; return; }
     if (currentPage) {
       currentPage.classList.add('page-exit');
       setTimeout(() => {
         currentPage.classList.remove('active-page-content');
         currentPage.classList.remove('page-exit');
-        
-        // Show target page with entrance animation
         targetPage.classList.add('active-page-content');
-        
-        // Update active nav button
         document.querySelectorAll('.nav-option').forEach(btn => {
           btn.classList.remove('active-page');
-          if (btn.getAttribute('data-page') === pageId) {
-            btn.classList.add('active-page');
-          }
+          if (btn.getAttribute('data-page') === pageId) btn.classList.add('active-page');
         });
-        
         window.scrollTo({ top: 0, behavior: 'smooth' });
         isAnimating = false;
       }, 250);
@@ -746,7 +773,7 @@
   window.switchToPage = switchToPage;
   document.querySelectorAll('.nav-option').forEach(btn => btn.addEventListener('click', () => switchToPage(btn.getAttribute('data-page'))));
 
-  // ADMIN PANEL - Password hidden
+  // Admin panel with password
   const ADMIN_PASS = "vampirehub";
   const modal = document.getElementById('adminModal');
   document.getElementById('adminPanelBtn').onclick = () => { modal.style.display = 'flex'; document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; document.getElementById('adminPassword').value = ''; document.getElementById('loginError').innerText = ''; };
@@ -754,25 +781,8 @@
     if(document.getElementById('adminPassword').value === ADMIN_PASS) {
       document.getElementById('adminLoginView').style.display='none';
       document.getElementById('adminEditView').style.display='block';
-      let html = '<h3>🏔️ Stone Prices</h3>';
-      stonesData.forEach(s=>{ html+=`<div class="price-edit-item"><label><strong>${s.name}</strong></label><input id="edit-${s.id}" value="${s.price}"><button class="save-price-btn" onclick="updateItem('stones','${s.id}')">Save</button></div>`; });
-      html += '<h3>🌿 Plant Prices</h3>';
-      plantsData.forEach(p=>{ html+=`<div class="price-edit-item"><label><strong>${p.name}</strong></label><input id="edit-${p.id}" value="${p.price}"><button class="save-price-btn" onclick="updateItem('plants','${p.id}')">Save</button></div>`; });
-      html += '<h3>🪨 Pebble Prices</h3>';
-      pebblesData.forEach(pb=>{ html+=`<div class="price-edit-item"><label><strong>${pb.name}</strong></label><input id="edit-${pb.id}" value="${pb.price}"><button class="save-price-btn" onclick="updateItem('pebbles','${pb.id}')">Save</button></div>`; });
-      html += '<h3>🌱 Lawn & Grass Prices</h3>';
-      lawnData.forEach(l=>{ html+=`<div class="price-edit-item"><label><strong>${l.name}</strong></label><input id="edit-${l.id}" value="${l.price}"><button class="save-price-btn" onclick="updateItem('lawn','${l.id}')">Save</button></div>`; });
-      document.getElementById('priceEditList').innerHTML = html;
+      refreshAdminPanel();
     } else { document.getElementById('loginError').innerText = 'Wrong password! Access denied.'; }
-  };
-  window.updateItem = (type, id) => {
-    let newVal = document.getElementById(`edit-${id}`).value;
-    if(!newVal) return;
-    if(type==='stones'){ let item=stonesData.find(s=>s.id===id); if(item) item.price=newVal; }
-    if(type==='plants'){ let item=plantsData.find(p=>p.id===id); if(item) item.price=newVal; }
-    if(type==='pebbles'){ let item=pebblesData.find(p=>p.id===id); if(item) item.price=newVal; }
-    if(type==='lawn'){ let item=lawnData.find(l=>l.id===id); if(item) item.price=newVal; }
-    saveAll(); renderAll(); alert("Price updated!");
   };
   document.getElementById('logoutAdminBtn')?.addEventListener('click',()=>{ document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; modal.style.display='none'; });
   document.getElementById('closeAdminPanelBtn').onclick = () => modal.style.display = 'none';
@@ -784,7 +794,7 @@
 
   window.addEventListener('scroll', () => { if(window.scrollY>50) document.getElementById('navbar').classList.add('scrolled'); else document.getElementById('navbar').classList.remove('scrolled'); });
   
-  loadFromStorage(); renderAll(); saveAll();
+  loadFromStorage(); renderAll(); saveAllToStorage();
 </script>
 </body>
 </html>
