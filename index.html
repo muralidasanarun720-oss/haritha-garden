@@ -172,8 +172,8 @@
     .admin-modal-content {
       background: white;
       border-radius: 28px;
-      max-width: 700px;
-      width: 92%;
+      max-width: 750px;
+      width: 94%;
       padding: 1.5rem;
       max-height: 85vh;
       overflow-y: auto;
@@ -181,73 +181,77 @@
     }
     .price-edit-item {
       background: #f8fafc;
-      padding: 12px;
+      padding: 14px;
       border-radius: 20px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       border: 1px solid #e2e8f0;
     }
-    .item-header { font-weight: 700; color: var(--primary-blue); margin-bottom: 8px; font-size: 1rem; }
+    .item-header { font-weight: 800; color: var(--primary-blue); margin-bottom: 10px; font-size: 1rem; border-left: 4px solid var(--primary-blue); padding-left: 10px; }
     .image-preview-area {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin: 8px 0;
-      background: #fff;
-      padding: 8px;
+      margin: 10px 0;
+      background: white;
+      padding: 10px;
       border-radius: 16px;
     }
     .current-image-preview {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       object-fit: cover;
       border-radius: 12px;
-      border: 1px solid #cbd5e1;
+      border: 2px solid #cbd5e1;
       background: #f1f5f9;
     }
     .file-input-label {
       background: #e2e8f0;
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 0.7rem;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.75rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .file-input-label:hover { background: #cbd5e1; }
     .upload-img-btn {
       background: var(--primary-blue);
       color: white;
       border: none;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.7rem;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.75rem;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.2s;
     }
+    .upload-img-btn:hover { background: #1e40af; }
     .price-input-group {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
       flex-wrap: wrap;
-      margin-top: 8px;
+      margin-top: 10px;
     }
     .price-input-group input {
-      flex: 1;
-      padding: 8px;
-      border-radius: 30px;
+      flex: 2;
+      padding: 10px 15px;
+      border-radius: 40px;
       border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
     }
     .save-price-btn {
       background: #10b981;
       color: white;
       border: none;
-      padding: 6px 16px;
-      border-radius: 30px;
+      padding: 8px 20px;
+      border-radius: 40px;
       cursor: pointer;
+      font-weight: 600;
     }
     .admin-login-btn, .close-admin {
       background: var(--gradient);
@@ -260,26 +264,6 @@
       width: 100%;
       margin-top: 0.8rem;
     }
-
-    /* Page & Cards Styles */
-    .page { display: none; animation: fadeIn 0.4s ease; }
-    .page.active-page-content { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .back-home-container { max-width: 1400px; margin: 0.7rem auto 0; padding: 0 1rem; }
-    .btn-back-home {
-      background: #eff6ff;
-      border: 1px solid var(--border-light);
-      color: var(--primary-blue);
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.75rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    section { max-width: 1400px; margin: 0 auto; padding: 1.2rem 1rem; }
     .section-title {
       font-size: 1.5rem;
       font-weight: 800;
@@ -296,7 +280,7 @@
       margin: 10px auto 0;
       border-radius: 3px;
     }
-    .stone-grid, .plant-grid, .pebbles-grid, .lawn-grid, .project-grid {
+    .stone-grid, .plant-grid, .pebbles-grid, .lawn-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.2rem;
@@ -310,7 +294,6 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-sm);
     }
-    .stone-card:hover, .plant-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
     .stone-img, .plant-img, .pebble-img, .lawn-img {
       background: #f0f9ff;
       border-radius: 16px;
@@ -325,7 +308,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s;
     }
     .price-tag { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); margin-top: 6px; }
     .hero {
@@ -342,7 +324,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=1200');
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -387,6 +368,20 @@
       font-size: 0.75rem;
       font-weight: bold;
     }
+    .back-home-container { max-width: 1400px; margin: 0.7rem auto 0; padding: 0 1rem; }
+    .btn-back-home {
+      background: #eff6ff;
+      border: 1px solid var(--border-light);
+      color: var(--primary-blue);
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
     footer { text-align: center; padding: 1.3rem; background: #f8fafc; font-size: 0.7rem; }
     @media (min-width: 768px) {
       .nav-container { flex-direction: row; justify-content: space-between; align-items: center; }
@@ -420,10 +415,10 @@
 
 <a href="https://wa.me/919656181249?text=Hello%20Haritha%20Garden!%20I'm%20interested" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 
-<!-- ADMIN MODAL with File Upload -->
+<!-- ADMIN MODAL with WORKING File Upload -->
 <div id="adminModal" class="admin-modal">
   <div class="admin-modal-content">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
       <h2><i class="fas fa-crown"></i> Admin Control</h2>
       <button id="closeAdminPanelBtn" style="background:none; border:none; font-size:1.8rem; cursor:pointer;">&times;</button>
     </div>
@@ -456,13 +451,13 @@
   <div id="plants-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Garden Plants</h2><div class="plant-grid" id="plantGrid"></div></section></div>
   <div id="pebbles-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Decorative Pebbles</h2><div class="pebbles-grid" id="pebblesGrid"></div></section></div>
   <div id="lawn-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Premium Lawn & Grass</h2><div class="lawn-grid" id="lawnGrid"></div></section></div>
-  <div id="features-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Lotus Pond & Rock Garden</h2><div class="feature-grid" style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;"><div class="feature-card" style="background:#fff; border-radius:20px; padding:1rem; width:200px;"><i class="fas fa-lotus"></i><h3>Lotus Pond</h3></div><div class="feature-card"><i class="fas fa-mountain"></i><h3>Rock Garden</h3></div></div></section></div>
-  <div id="projects-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Our Projects</h2><div class="project-grid" id="projectGrid"></div></section></div>
+  <div id="features-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Lotus Pond & Rock Garden</h2><div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;"><div class="feature-card" style="background:#fff; border-radius:20px; padding:1.5rem; width:220px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.05);"><i class="fas fa-lotus" style="font-size:2rem; color:#1e3a8a;"></i><h3>Lotus Pond</h3><p>Bio-filter ponds</p></div><div class="feature-card" style="background:#fff; border-radius:20px; padding:1.5rem; width:220px; text-align:center;"><i class="fas fa-mountain" style="font-size:2rem; color:#1e3a8a;"></i><h3>Rock Garden</h3><p>Zen boulders</p></div></div></section></div>
+  <div id="projects-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back</button></div><section><h2 class="section-title">Our Projects</h2><div class="project-grid" id="projectGrid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;"></div></section></div>
 </main>
 <footer><p>Haritha Garden — Kerala Landscaping Specialists | PALAKKAD | +91 7025371249</p></footer>
 
 <script>
-  // --------------------------- DATA MODELS ---------------------------
+  // ======================= DATA MODELS =======================
   let stonesData = [
     { id: "stone1", name: "Bangalore Stone", img: "https://images.pexels.com/photos/1156877/pexels-photo-1156877.jpeg?auto=compress&cs=tinysrgb&w=600", desc: "Premium granite finish", price: "₹125 /sqft" },
     { id: "stone2", name: "Tandoor Stone", img: "https://images.pexels.com/photos/210314/pexels-photo-210314.jpeg?auto=compress&cs=tinysrgb&w=600", desc: "Warm terracotta tones", price: "₹98 /sqft" },
@@ -490,15 +485,15 @@
   ];
   let heroBackgroundImage = "https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
-  // Helper: Save to localStorage
-  function saveAllToLocal() {
+  // Helper: Save/Load localStorage
+  function saveAllData() {
     localStorage.setItem("haritha_stones", JSON.stringify(stonesData));
     localStorage.setItem("haritha_plants", JSON.stringify(plantsData));
     localStorage.setItem("haritha_pebbles", JSON.stringify(pebblesData));
     localStorage.setItem("haritha_lawn", JSON.stringify(lawnData));
     localStorage.setItem("haritha_hero_bg", heroBackgroundImage);
   }
-  function loadFromLocal() {
+  function loadAllData() {
     let s = localStorage.getItem("haritha_stones"); if(s) stonesData = JSON.parse(s);
     let p = localStorage.getItem("haritha_plants"); if(p) plantsData = JSON.parse(p);
     let pe = localStorage.getItem("haritha_pebbles"); if(pe) pebblesData = JSON.parse(pe);
@@ -506,20 +501,19 @@
     let hero = localStorage.getItem("haritha_hero_bg"); if(hero) heroBackgroundImage = hero;
   }
 
-  // Render all products on website
+  // Render all pages
   function renderWebsite() {
-    document.getElementById('stoneGrid').innerHTML = stonesData.map(s => `<div class="stone-card"><div class="stone-img"><img src="${s.img}" class="card-image" loading="lazy"></div><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`).join('');
-    document.getElementById('plantGrid').innerHTML = plantsData.map(p => `<div class="plant-card"><div class="plant-img"><img src="${p.img}" class="card-image"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('pebblesGrid').innerHTML = pebblesData.map(p => `<div class="pebble-card"><div class="pebble-img"><img src="${p.img}" class="card-image"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('lawnGrid').innerHTML = lawnData.map(l => `<div class="lawn-card"><div class="lawn-img"><img src="${l.img}" class="card-image"></div><h3>${l.name}</h3><p>${l.desc}</p><div class="price-tag">${l.price}</div></div>`).join('');
-    document.getElementById('projectGrid').innerHTML = projectsData.map(proj => `<div class="project-card" style="background:white; border-radius:20px; padding:1rem;"><h3>${proj.title}</h3><p>${proj.desc}</p></div>`).join('');
-    let heroDiv = document.querySelector('.hero-bg-image');
-    if(heroDiv) heroDiv.style.backgroundImage = `url('${heroBackgroundImage}')`;
+    document.getElementById('stoneGrid').innerHTML = stonesData.map(s => `<div class="stone-card"><div class="stone-img"><img src="${s.img}" class="card-image" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'"></div><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`).join('');
+    document.getElementById('plantGrid').innerHTML = plantsData.map(p => `<div class="plant-card"><div class="plant-img"><img src="${p.img}" class="card-image" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
+    document.getElementById('pebblesGrid').innerHTML = pebblesData.map(p => `<div class="pebble-card"><div class="pebble-img"><img src="${p.img}" class="card-image" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
+    document.getElementById('lawnGrid').innerHTML = lawnData.map(l => `<div class="lawn-card"><div class="lawn-img"><img src="${l.img}" class="card-image" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></div><h3>${l.name}</h3><p>${l.desc}</p><div class="price-tag">${l.price}</div></div>`).join('');
+    document.getElementById('projectGrid').innerHTML = projectsData.map(proj => `<div style="background:white; border-radius:20px; padding:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.05);"><h3>${proj.title}</h3><p>${proj.desc}</p></div>`).join('');
+    const heroElem = document.getElementById('heroBgImage');
+    if(heroElem) heroElem.style.backgroundImage = `url('${heroBackgroundImage}')`;
   }
 
-  // ---------- ADVANCED IMAGE UPLOAD (Device file picker) ----------
-  // Convert file to Base64 (so image persists in localStorage across sessions)
-  function fileToBase64(file) {
+  // WORKING IMAGE UPLOAD: file to base64 and update
+  function convertFileToBase64(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -528,144 +522,159 @@
     });
   }
 
-  // Universal function to update any product image via file input
-  window.uploadImageForItem = async (type, id) => {
-    const fileInput = document.getElementById(`fileInput-${id}`);
+  // Universal image updater
+  window.uploadProductImage = async (type, id) => {
+    const fileInput = document.getElementById(`imgFile_${id}`);
     if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
-      alert("Please select an image file from your device.");
+      alert("❌ Please select an image file from your device first.");
       return;
     }
     const file = fileInput.files[0];
     if (!file.type.startsWith('image/')) {
-      alert("Only image files allowed.");
+      alert("❌ Only image files are allowed (JPEG, PNG, etc).");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      alert("⚠️ File too large! Max 5MB.");
       return;
     }
     try {
-      const base64Image = await fileToBase64(file);
-      // Update the corresponding data array
-      let targetArray;
+      const base64String = await convertFileToBase64(file);
+      let targetArray = null;
       if (type === 'stones') targetArray = stonesData;
       else if (type === 'plants') targetArray = plantsData;
       else if (type === 'pebbles') targetArray = pebblesData;
       else if (type === 'lawn') targetArray = lawnData;
       else if (type === 'hero') {
-        heroBackgroundImage = base64Image;
-        saveAllToLocal();
+        heroBackgroundImage = base64String;
+        saveAllData();
         renderWebsite();
-        alert("Hero background image updated!");
-        refreshAdminPanelUI();
+        alert("✅ Hero background image updated successfully!");
+        refreshAdminPanel();
         return;
       }
       const item = targetArray.find(i => i.id === id);
       if (item) {
-        item.img = base64Image;
-        saveAllToLocal();
+        item.img = base64String;
+        saveAllData();
         renderWebsite();
-        alert(`Image updated for ${item.name} successfully!`);
-        refreshAdminPanelUI();  // refresh admin panel to show updated preview
+        alert(`✅ Image updated for "${item.name}" successfully!`);
+        refreshAdminPanel();  // refresh panel previews
+      } else {
+        alert("Item not found.");
       }
-    } catch(err) {
-      alert("Error uploading image: " + err.message);
+    } catch (err) {
+      alert("Upload failed: " + err.message);
     }
   };
 
-  // Admin panel UI with file picker for each item
-  function refreshAdminPanelUI() {
-    let html = `<h3 style="margin-top:0;">🏠 Hero Background</h3>
+  // Update price
+  window.updateItemPrice = (type, id) => {
+    const priceInput = document.getElementById(`price_${id}`);
+    if (!priceInput) return;
+    const newPrice = priceInput.value.trim();
+    if (!newPrice) { alert("Please enter a price"); return; }
+    let targetArray;
+    if (type === 'stones') targetArray = stonesData;
+    else if (type === 'plants') targetArray = plantsData;
+    else if (type === 'pebbles') targetArray = pebblesData;
+    else if (type === 'lawn') targetArray = lawnData;
+    const item = targetArray.find(i => i.id === id);
+    if (item) {
+      item.price = newPrice;
+      saveAllData();
+      renderWebsite();
+      alert("✅ Price updated!");
+      refreshAdminPanel();
+    }
+  };
+
+  // Build admin panel with working file inputs
+  function refreshAdminPanel() {
+    let html = `<h3 style="margin-top:0;">🏠 HERO BACKGROUND</h3>
     <div class="price-edit-item">
-      <div class="item-header">Main Hero Banner</div>
+      <div class="item-header">Main Hero Banner Image</div>
       <div class="image-preview-area">
-        <img src="${heroBackgroundImage}" class="current-image-preview" id="heroPreviewImg" onerror="this.src='https://placehold.co/100x60?text=Preview'">
-        <input type="file" id="heroFileInput" accept="image/*" style="display:none;" />
-        <label class="file-input-label" for="heroFileInputTrigger"><i class="fas fa-upload"></i> Choose from Device</label>
-        <button class="upload-img-btn" id="heroUploadBtn">Upload & Change</button>
+        <img src="${heroBackgroundImage}" class="current-image-preview" id="heroPreviewImg" onerror="this.src='https://placehold.co/70x70?text=Preview'">
+        <input type="file" id="imgFile_hero" accept="image/*" style="display:none;" />
+        <label class="file-input-label" for="imgFile_hero" style="cursor:pointer;"><i class="fas fa-folder-open"></i> Choose Image</label>
+        <button class="upload-img-btn" id="uploadHeroBtn">Upload & Change</button>
       </div>
     </div>`;
     
-    // Render Stones with file picker
-    html += `<h3>🏔️ Stone Products (Images & Prices)</h3>`;
+    // Stones section
+    html += `<h3 style="margin-top:20px;">🏔️ STONE PRODUCTS</h3>`;
     stonesData.forEach(s => {
-      html += `<div class="price-edit-item" id="admin-item-${s.id}">
+      html += `<div class="price-edit-item">
         <div class="item-header">${s.name}</div>
         <div class="image-preview-area">
-          <img src="${s.img}" class="current-image-preview" id="preview-${s.id}" onerror="this.src='https://placehold.co/60x60?text=No+Img'">
-          <input type="file" id="fileInput-${s.id}" accept="image/*" style="display:none;" />
-          <label class="file-input-label" for="fileInput-${s.id}"><i class="fas fa-folder-open"></i> Select Image</label>
-          <button class="upload-img-btn" onclick="uploadImageForItem('stones','${s.id}')">Upload Image</button>
+          <img src="${s.img}" class="current-image-preview" id="preview_${s.id}" onerror="this.src='https://placehold.co/70x70?text=No+Img'">
+          <input type="file" id="imgFile_${s.id}" accept="image/*" style="display:none;" />
+          <label class="file-input-label" for="imgFile_${s.id}" style="cursor:pointer;"><i class="fas fa-upload"></i> Select from Device</label>
+          <button class="upload-img-btn" onclick="uploadProductImage('stones','${s.id}')">Upload Image</button>
         </div>
         <div class="price-input-group">
-          <input type="text" id="price-${s.id}" value="${s.price}" placeholder="Price">
-          <button class="save-price-btn" onclick="updatePriceField('stones','${s.id}')">Save Price</button>
+          <input type="text" id="price_${s.id}" value="${s.price}" placeholder="Price">
+          <button class="save-price-btn" onclick="updateItemPrice('stones','${s.id}')">Save Price</button>
         </div>
       </div>`;
     });
     
-    html += `<h3>🌿 Plants</h3>`;
+    // Plants
+    html += `<h3>🌿 PLANTS</h3>`;
     plantsData.forEach(p => {
       html += `<div class="price-edit-item">
         <div class="item-header">${p.name}</div>
-        <div class="image-preview-area"><img src="${p.img}" class="current-image-preview" id="preview-${p.id}"><input type="file" id="fileInput-${p.id}" style="display:none;" accept="image/*"><label class="file-input-label" for="fileInput-${p.id}">Select Image</label><button class="upload-img-btn" onclick="uploadImageForItem('plants','${p.id}')">Upload</button></div>
-        <div class="price-input-group"><input id="price-${p.id}" value="${p.price}"><button class="save-price-btn" onclick="updatePriceField('plants','${p.id}')">Save Price</button></div>
+        <div class="image-preview-area">
+          <img src="${p.img}" class="current-image-preview"><input type="file" id="imgFile_${p.id}" style="display:none;" />
+          <label class="file-input-label" for="imgFile_${p.id}">Select Image</label>
+          <button class="upload-img-btn" onclick="uploadProductImage('plants','${p.id}')">Upload Image</button>
+        </div>
+        <div class="price-input-group"><input id="price_${p.id}" value="${p.price}"><button class="save-price-btn" onclick="updateItemPrice('plants','${p.id}')">Save Price</button></div>
       </div>`;
     });
     
-    html += `<h3>🪨 Pebbles</h3>`;
+    // Pebbles
+    html += `<h3>🪨 PEBBLES</h3>`;
     pebblesData.forEach(pb => {
       html += `<div class="price-edit-item">
         <div class="item-header">${pb.name}</div>
-        <div class="image-preview-area"><img src="${pb.img}" class="current-image-preview"><input type="file" id="fileInput-${pb.id}" style="display:none;"><label class="file-input-label" for="fileInput-${pb.id}">Select Image</label><button class="upload-img-btn" onclick="uploadImageForItem('pebbles','${pb.id}')">Upload</button></div>
-        <div class="price-input-group"><input id="price-${pb.id}" value="${pb.price}"><button class="save-price-btn" onclick="updatePriceField('pebbles','${pb.id}')">Save Price</button></div>
+        <div class="image-preview-area"><img src="${pb.img}" class="current-image-preview"><input type="file" id="imgFile_${pb.id}" style="display:none;"><label class="file-input-label" for="imgFile_${pb.id}">Select Image</label><button class="upload-img-btn" onclick="uploadProductImage('pebbles','${pb.id}')">Upload Image</button></div>
+        <div class="price-input-group"><input id="price_${pb.id}" value="${pb.price}"><button class="save-price-btn" onclick="updateItemPrice('pebbles','${pb.id}')">Save Price</button></div>
       </div>`;
     });
     
-    html += `<h3>🌱 Lawn & Grass</h3>`;
+    // Lawn
+    html += `<h3>🌱 LAWN & GRASS</h3>`;
     lawnData.forEach(l => {
       html += `<div class="price-edit-item">
         <div class="item-header">${l.name}</div>
-        <div class="image-preview-area"><img src="${l.img}" class="current-image-preview"><input type="file" id="fileInput-${l.id}" style="display:none;"><label class="file-input-label" for="fileInput-${l.id}">Select Image</label><button class="upload-img-btn" onclick="uploadImageForItem('lawn','${l.id}')">Upload</button></div>
-        <div class="price-input-group"><input id="price-${l.id}" value="${l.price}"><button class="save-price-btn" onclick="updatePriceField('lawn','${l.id}')">Save Price</button></div>
+        <div class="image-preview-area"><img src="${l.img}" class="current-image-preview"><input type="file" id="imgFile_${l.id}" style="display:none;"><label class="file-input-label" for="imgFile_${l.id}">Select Image</label><button class="upload-img-btn" onclick="uploadProductImage('lawn','${l.id}')">Upload Image</button></div>
+        <div class="price-input-group"><input id="price_${l.id}" value="${l.price}"><button class="save-price-btn" onclick="updateItemPrice('lawn','${l.id}')">Save Price</button></div>
       </div>`;
     });
     
     document.getElementById('priceEditList').innerHTML = html;
     
-    // attach hero upload manually
-    const heroTrigger = document.getElementById('heroFileInputTrigger');
-    if(heroTrigger) {
-      const heroFileInput = document.createElement('input');
-      heroFileInput.type = 'file';
-      heroFileInput.accept = 'image/*';
-      heroFileInput.style.display = 'none';
-      heroFileInput.id = 'heroHiddenFile';
-      document.body.appendChild(heroFileInput);
-      heroTrigger.onclick = () => heroFileInput.click();
+    // attach hero upload manually (because it's dynamic)
+    const heroFileInput = document.getElementById('imgFile_hero');
+    const uploadHeroBtn = document.getElementById('uploadHeroBtn');
+    if (heroFileInput && uploadHeroBtn) {
+      uploadHeroBtn.onclick = () => heroFileInput.click();
       heroFileInput.onchange = async (e) => {
-        if(e.target.files.length) {
+        if (e.target.files.length) {
           const file = e.target.files[0];
-          const base64 = await fileToBase64(file);
+          const base64 = await convertFileToBase64(file);
           heroBackgroundImage = base64;
-          saveAllToLocal();
+          saveAllData();
           renderWebsite();
-          refreshAdminPanelUI();
-          alert("Hero background updated!");
+          refreshAdminPanel();
+          alert("✨ Hero background updated!");
         }
       };
-      const heroUploadBtn = document.getElementById('heroUploadBtn');
-      if(heroUploadBtn) heroUploadBtn.onclick = () => heroFileInput.click();
     }
   }
-  
-  window.updatePriceField = (type, id) => {
-    let newPrice = document.getElementById(`price-${id}`).value;
-    if(!newPrice) return;
-    let target;
-    if(type==='stones') target = stonesData.find(i=>i.id===id);
-    else if(type==='plants') target = plantsData.find(i=>i.id===id);
-    else if(type==='pebbles') target = pebblesData.find(i=>i.id===id);
-    else if(type==='lawn') target = lawnData.find(i=>i.id===id);
-    if(target) { target.price = newPrice; saveAllToLocal(); renderWebsite(); alert("Price updated"); refreshAdminPanelUI(); }
-  };
-  
+
   // Page switching
   function switchToPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page-content'));
@@ -679,16 +688,16 @@
   window.switchToPage = switchToPage;
   document.querySelectorAll('.nav-option').forEach(btn => btn.addEventListener('click', () => switchToPage(btn.getAttribute('data-page'))));
   
-  // Admin Auth
+  // Admin Authentication & Modal Logic
   const ADMIN_PASS = "vampirehub";
   const modal = document.getElementById('adminModal');
-  document.getElementById('adminPanelBtn').onclick = () => { modal.style.display = 'flex'; document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; document.getElementById('adminPassword').value=''; };
+  document.getElementById('adminPanelBtn').onclick = () => { modal.style.display = 'flex'; document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; document.getElementById('adminPassword').value=''; document.getElementById('loginError').innerText=''; };
   document.getElementById('loginAdminBtn').onclick = () => {
     if(document.getElementById('adminPassword').value === ADMIN_PASS) {
       document.getElementById('adminLoginView').style.display='none';
       document.getElementById('adminEditView').style.display='block';
-      refreshAdminPanelUI();
-    } else { document.getElementById('loginError').innerText = 'Wrong password!'; }
+      refreshAdminPanel();
+    } else { document.getElementById('loginError').innerText = 'Wrong password! Access denied.'; }
   };
   document.getElementById('logoutAdminBtn')?.addEventListener('click',()=>{ document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; modal.style.display='none'; });
   document.getElementById('closeAdminPanelBtn').onclick = () => modal.style.display = 'none';
@@ -698,9 +707,9 @@
   // Particles
   for(let i=0;i<30;i++){ let p=document.createElement('div'); p.classList.add('particle'); p.style.width=(Math.random()*5+2)+'px'; p.style.height=p.style.width; p.style.left=Math.random()*100+'%'; p.style.animationDuration=(Math.random()*18+8)+'s'; document.getElementById('particles').appendChild(p); }
   
-  loadFromLocal();
+  loadAllData();
   renderWebsite();
-  saveAllToLocal();
+  saveAllData();
 </script>
 </body>
 </html>
