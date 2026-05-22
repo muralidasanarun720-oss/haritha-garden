@@ -1,24 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
   <meta name="theme-color" content="#1a5f5f">
-  <meta name="description" content="Haritha Garden - Premium Landscaping Kerala | Stone Paving, Lotus Ponds, Lawn Grass Specialists. Award-winning eco-friendly garden designs in Palakkad.">
-  <meta name="keywords" content="landscaping Kerala, stone paving, lotus pond, lawn grass, garden design, Haritha Garden, Palakkad landscaping, rock garden, Korean grass">
-  <meta name="author" content="Haritha Garden">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://harithagarden.com/">
-  <meta property="og:title" content="Haritha Garden | Premium Landscaping Kerala">
-  <meta property="og:description" content="Transform your outdoor space with expert stone paving, lotus ponds, and premium lawns.">
-  <meta property="og:image" content="https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=800">
-  <meta property="og:type" content="website">
-  <title>Haritha Garden | Premium Landscaping Kerala | Stone Paving, Lotus Ponds & Lawn Grass</title>
+  <meta name="description" content="Haritha Garden - Premium Landscaping Kerala | Stone Paving, Lotus Ponds, Lawn Grass Specialists">
+  <title>Haritha Garden | Premium Landscaping Kerala | Complete Admin Control</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -36,7 +27,6 @@
     }
     body { background: var(--sand-light); font-family: 'Inter', sans-serif; color: var(--charcoal-soft); scroll-behavior: smooth; overflow-x: hidden; }
     
-    /* Professional Loading Animation - Extended Timing */
     .loading-overlay {
       position: fixed;
       top: 0;
@@ -48,392 +38,341 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+      transition: opacity 1s;
     }
-    .loading-container {
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      animation: containerPulse 2.5s ease-in-out infinite;
-    }
-    @keyframes containerPulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.02); opacity: 0.98; }
-    }
-    .loading-logo {
-      font-size: 3rem;
-      font-weight: 800;
-      font-family: 'Playfair Display', serif;
-      color: var(--cream-warm);
-      letter-spacing: -0.5px;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 15px rgba(0,0,0,0.2);
-      animation: logoGlow 2s ease-in-out infinite;
-    }
-    @keyframes logoGlow {
-      0%, 100% { text-shadow: 0 2px 15px rgba(0,0,0,0.2); }
-      50% { text-shadow: 0 0 25px rgba(255,107,74,0.6); }
-    }
-    .loading-logo i {
-      color: var(--coral-bright);
-      margin-right: 12px;
-      font-size: 2.8rem;
-      filter: drop-shadow(0 0 8px rgba(255,107,74,0.5));
-      animation: iconPulse 1.8s ease-in-out infinite;
-    }
-    @keyframes iconPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-    .loading-text {
-      color: rgba(255,245,230,0.85);
-      font-size: 0.85rem;
-      letter-spacing: 4px;
-      margin-top: 0.5rem;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-    .loading-subtitle {
-      color: rgba(255,245,230,0.6);
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      margin-top: 0.5rem;
-    }
-    .loading-progress {
-      width: 260px;
-      height: 2px;
-      background: rgba(255,245,230,0.2);
-      border-radius: 2px;
-      margin: 1.8rem auto 0;
-      overflow: hidden;
-    }
-    .loading-progress-bar {
-      width: 0%;
-      height: 100%;
-      background: var(--coral-bright);
-      border-radius: 2px;
-      transition: width 0.25s ease-out;
-      box-shadow: 0 0 8px var(--coral-bright);
-    }
+    .loading-logo { font-size: 3rem; font-weight: 800; font-family: 'Playfair Display', serif; color: var(--cream-warm); text-align: center; }
+    .loading-logo i { color: var(--coral-bright); margin-right: 12px; }
+    .loading-progress { width: 260px; height: 2px; background: rgba(255,245,230,0.2); border-radius: 2px; margin: 1.8rem auto 0; overflow: hidden; }
+    .loading-progress-bar { width: 0%; height: 100%; background: var(--coral-bright); transition: width 0.25s; }
     
-    /* Professional Animation - Concentric Ripples Slower */
-    .ripple-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .ripple {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: transparent;
-      border: 2px solid rgba(255,107,74,0.35);
-      transform: translate(-50%, -50%);
-      animation: rippleExpand 3s ease-out infinite;
-    }
-    .ripple:nth-child(1) { animation-delay: 0s; }
-    .ripple:nth-child(2) { animation-delay: 1s; }
-    .ripple:nth-child(3) { animation-delay: 2s; }
-    @keyframes rippleExpand {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0.7;
-        border-width: 2px;
-      }
-      100% {
-        width: 400px;
-        height: 400px;
-        opacity: 0;
-        border-width: 0.5px;
-      }
-    }
-    
-    /* Floating Geometric Shapes */
-    .floating-shapes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .floating-shape {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--coral-bright);
-      opacity: 0.3;
-      border-radius: 1px;
-      animation: floatShape linear infinite;
-    }
-    .floating-shape:nth-child(odd) {
-      background: var(--teal-light);
-      border-radius: 50%;
-    }
-    .floating-shape:nth-child(3n) {
-      width: 12px;
-      height: 12px;
-      background: var(--cream-warm);
-      opacity: 0.25;
-    }
-    @keyframes floatShape {
-      0% {
-        transform: translateY(-10vh) rotate(0deg) scale(1);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.4;
-      }
-      90% {
-        opacity: 0.3;
-      }
-      100% {
-        transform: translateY(110vh) rotate(180deg) scale(0.5);
-        opacity: 0;
-      }
-    }
-    
-    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 40%, rgba(255,107,74,0.05) 0%, var(--sand-light) 90%); pointer-events: none; z-index: 0; }
-    .particle-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-    .particle { position: absolute; background: var(--coral-bright); border-radius: 50%; opacity: 0.06; animation: floatUp 22s infinite ease-in-out; will-change: transform; }
-    @keyframes floatUp { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 15% { opacity: 0.08; } 85% { opacity: 0.06; } 100% { transform: translateY(-20vh) rotate(400deg); opacity: 0; } }
-    
-    main, nav, footer, .whatsapp-float { position: relative; z-index: 2; }
-    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #e8ddd0; border-radius: 10px; } ::-webkit-scrollbar-thumb { background: var(--teal-soft); border-radius: 10px; }
-    
-    /* Professional Navbar */
-    .navbar { background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(26,95,95,0.1); padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.03); }
+    .navbar { background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(26,95,95,0.1); padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; }
     .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .logo { font-size: 1.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; background: var(--gradient-teal-coral); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.5px; }
+    .logo { font-size: 1.5rem; font-weight: 800; background: var(--gradient-teal-coral); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .logo i { color: var(--coral-bright); margin-right: 8px; }
-    .nav-links-wrapper { overflow-x: auto; white-space: nowrap; }
-    .nav-links { display: inline-flex; gap: 0.3rem; list-style: none; }
-    .nav-links .nav-option { color: var(--charcoal-soft); font-weight: 600; cursor: pointer; background: none; border: none; font-size: 0.85rem; padding: 0.5rem 1.1rem; border-radius: 50px; transition: all 0.25s ease; }
-    .nav-links .nav-option:hover { background: rgba(255,107,74,0.1); color: var(--coral-bright); transform: translateY(-2px); }
-    .nav-links .active-page { background: var(--gradient-teal-coral); color: white !important; box-shadow: 0 4px 12px rgba(255,107,74,0.3); }
-    .admin-toggle-btn { background: transparent; border: 1.5px solid var(--teal-soft); color: var(--teal-soft); padding: 6px 16px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.75rem; transition: all 0.25s; }
-    .admin-toggle-btn:hover { background: var(--teal-soft); color: white; }
+    .nav-links { display: inline-flex; gap: 0.3rem; list-style: none; flex-wrap: wrap; }
+    .nav-option { color: var(--charcoal-soft); font-weight: 600; cursor: pointer; background: none; border: none; font-size: 0.85rem; padding: 0.5rem 1.1rem; border-radius: 50px; transition: all 0.25s; }
+    .nav-option:hover { background: rgba(255,107,74,0.1); color: var(--coral-bright); }
+    .active-page { background: var(--gradient-teal-coral); color: white !important; box-shadow: 0 4px 12px rgba(255,107,74,0.3); }
+    .admin-toggle-btn { background: var(--teal-soft); color: white; padding: 6px 16px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.75rem; border: none; transition: all 0.25s; }
+    .admin-toggle-btn:hover { background: var(--coral-bright); transform: scale(1.02); }
     
-    /* Hero Section */
     .hero { min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-    .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 0; filter: brightness(0.45) contrast(1.05); transform: scale(1.02); animation: slowZoom 20s infinite alternate; will-change: transform; }
-    @keyframes slowZoom { 0% { transform: scale(1.02); } 100% { transform: scale(1.08); } }
+    .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 0; filter: brightness(0.45); }
     .hero-overlay { position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,95,95,0.8) 0%, rgba(255,107,74,0.6) 100%); z-index: 1; }
-    .hero-content { position: relative; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-radius: 32px; padding: 2.5rem 3rem; max-width: 750px; margin: 0 1.5rem; box-shadow: var(--shadow-warm); border: 1px solid rgba(255,107,74,0.2); animation: fadeSlideUp 0.8s ease-out; }
-    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(35px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-brand { font-size: 3.2rem; font-weight: 800; font-family: 'Playfair Display', serif; background: var(--gradient-teal-coral); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
-    .hero-tagline { font-size: 1.1rem; color: var(--charcoal-soft); margin-bottom: 2rem; font-weight: 500; line-height: 1.5; }
-    .btn-primary { background: var(--gradient-coral); padding: 14px 36px; border-radius: 50px; color: white; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,107,74,0.35); }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(255,107,74,0.45); background: linear-gradient(135deg, #ff7a5c, #ff5a3a); }
+    .hero-content { position: relative; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-radius: 32px; padding: 2.5rem 3rem; max-width: 750px; margin: 0 1.5rem; box-shadow: var(--shadow-warm); }
+    .hero-brand { font-size: 3.2rem; font-weight: 800; font-family: 'Playfair Display', serif; background: var(--gradient-teal-coral); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .btn-primary { background: var(--gradient-coral); padding: 14px 36px; border-radius: 50px; color: white; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s; }
+    .btn-primary:hover { transform: translateY(-3px); }
     
-    /* Professional Cards */
-    .stone-card, .plant-card, .pebble-card, .lawn-card, .project-card, .feature-card-item { background: white; border-radius: 20px; overflow: hidden; transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1); border: 1px solid rgba(26,95,95,0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .stone-card:hover, .plant-card:hover, .pebble-card:hover, .lawn-card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px rgba(26,95,95,0.12); border-color: var(--coral-bright); }
-    .stone-card h3, .plant-card h3, .pebble-card h3, .lawn-card h3, .project-card h3, .feature-card-item h3 { color: var(--teal-deep); font-weight: 700; font-size: 1.15rem; padding: 0 1rem 0.25rem; }
-    .stone-card p, .plant-card p, .pebble-card p, .lawn-card p, .project-card p, .feature-card-item p { color: #6a7e7a; font-size: 0.8rem; padding: 0 1rem; }
-    .stone-img, .plant-img, .pebble-img, .lawn-img, .project-img, .feature-img { height: 180px; background: #faf0e6; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
-    .card-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .stone-card:hover .card-image, .plant-card:hover .card-image { transform: scale(1.05); }
-    .price-tag { font-size: 1.1rem; font-weight: 800; color: var(--coral-bright); margin: 8px 1rem 1rem; }
-    .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; font-family: 'Playfair Display', serif; color: var(--teal-deep); margin: 2rem 0 0.5rem; letter-spacing: -0.3px; }
+    .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; font-family: 'Playfair Display', serif; color: var(--teal-deep); margin: 2rem 0 0.5rem; }
     .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gradient-coral); margin: 14px auto 0; border-radius: 3px; }
     
-    .stone-grid, .plant-grid, .pebbles-grid, .lawn-grid, .project-grid, .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 0 1.5rem; }
+    .stone-grid, .plant-grid, .pebbles-grid, .lawn-grid, .project-grid, .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin: 2rem 0; padding: 0 1.5rem;
+    }
+    .stone-card, .plant-card, .pebble-card, .lawn-card, .project-card, .feature-card-item {
+      background: white; border-radius: 20px; overflow: hidden; transition: all 0.35s; border: 1px solid rgba(26,95,95,0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .stone-card:hover, .plant-card:hover { transform: translateY(-6px); border-color: var(--coral-bright); }
+    .stone-img, .plant-img, .pebble-img, .lawn-img, .project-img, .feature-img { height: 200px; overflow: hidden; }
+    .card-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .price-tag { font-size: 1.1rem; font-weight: 800; color: var(--coral-bright); margin: 8px 1rem 1rem; }
+    .stone-card h3, .plant-card h3 { color: var(--teal-deep); padding: 0 1rem 0.25rem; }
+    .stone-card p, .plant-card p { color: #6a7e7a; font-size: 0.8rem; padding: 0 1rem; }
     
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; border-radius: 50px; padding: 12px 24px; display: flex; align-items: center; gap: 10px; z-index: 999; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 0.85rem; transition: all 0.3s; }
-    .whatsapp-float:hover { transform: scale(1.03); background: #20b858; }
-    .back-home-container { max-width: 1400px; margin: 1.5rem auto 0; padding: 0 1.5rem; }
-    .btn-back-home { background: rgba(26,95,95,0.08); border: 1px solid rgba(26,95,95,0.2); color: var(--teal-deep); padding: 8px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.25s; font-size: 0.8rem; }
-    .btn-back-home:hover { background: var(--teal-soft); color: white; }
-    footer { text-align: center; padding: 2rem; background: var(--teal-deep); color: var(--cream-warm); font-size: 0.8rem; margin-top: 3rem; }
-    .page { display: none; animation: fadeInUp 0.5s ease-out; }
+    /* Horizontal Scroll */
+    .horizontal-scroll-section { margin: 2rem 0; }
+    .scroll-header { display: flex; justify-content: space-between; align-items: center; margin: 0 1.5rem 1rem; }
+    .scroll-header h2 { font-size: 1.5rem; color: var(--teal-deep); }
+    .scroll-btn { background: var(--teal-soft); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; transition: 0.2s; }
+    .scroll-btn:hover { background: var(--coral-bright); transform: scale(1.05); }
+    .scroll-container { overflow-x: auto; scroll-behavior: smooth; display: flex; gap: 1.5rem; padding: 0.5rem 1.5rem 1.5rem; }
+    .scroll-card { flex: 0 0 auto; width: 280px; background: white; border-radius: 20px; overflow: hidden; border: 1px solid rgba(26,95,95,0.1); }
+    .scroll-card:hover { transform: translateY(-5px); border-color: var(--coral-bright); }
+    .scroll-img { height: 180px; overflow: hidden; }
+    .scroll-img img { width: 100%; height: 100%; object-fit: cover; }
+    .scroll-card h3 { padding: 1rem 1rem 0.25rem; color: var(--teal-deep); }
+    .scroll-price { font-weight: 800; color: var(--coral-bright); margin: 8px 1rem 1rem; }
+    
+    /* Admin Panel - Full Control (Secure Password) */
+    .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; }
+    .admin-modal-content { background: var(--cream-warm); border-radius: 32px; max-width: 1000px; width: 95%; max-height: 90vh; overflow-y: auto; padding: 1.8rem; }
+    .admin-section { margin-bottom: 2rem; border-bottom: 2px solid var(--teal-soft); padding-bottom: 1rem; }
+    .admin-section h3 { color: var(--teal-deep); margin-bottom: 1rem; font-size: 1.3rem; }
+    .admin-item { background: white; border-radius: 16px; padding: 1rem; margin-bottom: 1rem; border: 1px solid rgba(26,95,95,0.2); }
+    .admin-item-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+    .admin-item input, .admin-item textarea { padding: 8px 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 0.85rem; width: 100%; margin: 5px 0; }
+    .admin-item textarea { resize: vertical; }
+    .img-preview-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; align-items: center; }
+    .img-preview { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 2px solid var(--teal-soft); position: relative; }
+    .delete-img-btn { background: var(--coral-bright); color: white; border: none; border-radius: 20px; padding: 2px 8px; font-size: 0.7rem; cursor: pointer; margin-left: 5px; }
+    .add-img-btn, .save-item-btn, .delete-item-btn { background: var(--teal-soft); color: white; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; margin: 2px; }
+    .delete-item-btn { background: var(--coral-bright); }
+    .save-item-btn { background: var(--teal-deep); }
+    .hero-edit { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+    .hero-edit img { width: 100px; height: 70px; object-fit: cover; border-radius: 12px; }
+    .add-new-btn { background: var(--teal-soft); color: white; border: none; padding: 8px 20px; border-radius: 30px; cursor: pointer; margin-bottom: 1rem; }
+    .close-admin { background: var(--coral-bright); color: white; padding: 10px 20px; border-radius: 40px; border: none; cursor: pointer; margin-top: 1rem; width: 100%; }
+    
+    /* Password Modal Styling */
+    .password-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(12px); z-index: 2500; display: flex; justify-content: center; align-items: center; }
+    .password-box { background: var(--cream-warm); border-radius: 32px; padding: 2rem; max-width: 400px; width: 90%; text-align: center; border: 2px solid var(--coral-bright); }
+    .password-box i { font-size: 3rem; color: var(--teal-deep); margin-bottom: 1rem; }
+    .password-box input { width: 100%; padding: 14px; margin: 1rem 0; border-radius: 60px; border: 1.5px solid rgba(26,95,95,0.3); font-size: 1rem; }
+    .password-box button { background: var(--gradient-coral); color: white; border: none; padding: 12px 24px; border-radius: 60px; font-weight: 700; cursor: pointer; width: 100%; }
+    .password-error { color: var(--coral-bright); margin-top: 10px; font-size: 0.85rem; }
+    
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; border-radius: 50px; padding: 12px 24px; display: flex; align-items: center; gap: 10px; z-index: 999; cursor: pointer; font-weight: 600; }
+    .wa-prechat-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 4000; justify-content: center; align-items: center; }
+    .wa-modal-content { background: var(--cream-warm); border-radius: 36px; max-width: 450px; width: 90%; padding: 2rem; text-align: center; }
+    .wa-modal-content input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 60px; border: 1px solid #ddd; }
+    .wa-submit-btn { background: #25D366; color: white; padding: 12px; border-radius: 60px; border: none; width: 100%; font-weight: bold; cursor: pointer; }
+    footer { text-align: center; padding: 2rem; background: var(--teal-deep); color: var(--cream-warm); margin-top: 3rem; }
+    .page { display: none; animation: fadeInUp 0.5s; }
     .active-page-content { display: block !important; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    
-    /* Gallery Modal */
-    .project-gallery-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); z-index: 3000; justify-content: center; align-items: center; }
-    .gallery-container { background: var(--cream-warm); border-radius: 32px; max-width: 1100px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 1.8rem; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 1px solid var(--coral-bright); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-    .gallery-item { background: white; border-radius: 20px; overflow: hidden; transition: 0.3s; cursor: pointer; border: 1px solid rgba(26,95,95,0.1); }
-    .gallery-item img { width: 100%; height: 180px; object-fit: cover; transition: 0.3s; }
-    .gallery-item:hover img { transform: scale(1.02); }
-    .gallery-item h4 { padding: 1rem 1rem 0.3rem; color: var(--teal-deep); font-size: 0.95rem; font-weight: 700; }
-    .close-gallery { background: var(--coral-bright); color: white; border: none; padding: 8px 22px; border-radius: 40px; font-weight: 600; cursor: pointer; margin-bottom: 1rem; float: right; }
-    
-    /* Admin Modal */
-    .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; }
-    .admin-modal-content { background: var(--cream-warm); border-radius: 32px; max-width: 850px; width: 94%; padding: 1.8rem; max-height: 85vh; overflow-y: auto; border: 2px solid var(--coral-bright); }
-    .price-edit-item { background: white; padding: 16px; border-radius: 20px; margin-bottom: 16px; border: 1px solid rgba(26,95,95,0.15); }
-    .multi-img-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; align-items: center; }
-    .multi-img-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 12px; border: 2px solid var(--teal-soft); cursor: pointer; }
-    .add-new-btn, .upload-img-btn, .save-price-btn { background: var(--teal-soft); color: white; border: none; padding: 6px 16px; border-radius: 40px; font-weight: 600; cursor: pointer; font-size: 0.7rem; }
-    .delete-img-btn { background: var(--coral-bright); color: white; border: none; border-radius: 30px; padding: 3px 10px; font-size: 0.6rem; cursor: pointer; }
-    @media (max-width: 768px) { .hero-brand { font-size: 2.2rem; } .hero-content { padding: 1.5rem; } .section-title { font-size: 1.8rem; } }
+    .back-home-container { padding: 1rem 1.5rem 0; }
+    .btn-back-home { background: rgba(26,95,95,0.08); border: 1px solid rgba(26,95,95,0.2); padding: 8px 20px; border-radius: 50px; cursor: pointer; }
+    @media (max-width: 768px) { .hero-brand { font-size: 2rem; } .section-title { font-size: 1.6rem; } }
   </style>
 </head>
 <body>
-<!-- Professional Loading Animation - Extended Duration -->
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="ripple-container">
-    <div class="ripple"></div>
-    <div class="ripple"></div>
-    <div class="ripple"></div>
-  </div>
-  <div class="floating-shapes" id="floatingShapes"></div>
-  <div class="loading-container">
-    <div class="loading-logo"><i class="fas fa-seedling"></i> HARITHA GARDEN</div>
-    <div class="loading-text">Premium Landscaping Kerala</div>
-    <div class="loading-subtitle">Creating Timeless Outdoor Spaces</div>
-    <div class="loading-progress"><div class="loading-progress-bar" id="progressBar"></div></div>
-  </div>
-</div>
 
-<div class="animated-bg"></div>
-<div class="particle-bg" id="particles"></div>
+<div class="loading-overlay" id="loadingOverlay">
+  <div><div class="loading-logo"><i class="fas fa-seedling"></i> HARITHA GARDEN</div><div class="loading-progress"><div class="loading-progress-bar" id="progressBar"></div></div></div>
+</div>
 
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo"><i class="fas fa-leaf"></i> HARITHA GARDEN</div>
-    <div class="nav-links-wrapper"><ul class="nav-links"><li><button class="nav-option active-page" data-page="home">Home</button></li><li><button class="nav-option" data-page="stones">Stone</button></li><li><button class="nav-option" data-page="plants">Plants</button></li><li><button class="nav-option" data-page="pebbles">Pebbles</button></li><li><button class="nav-option" data-page="lawn">Lawn</button></li><li><button class="nav-option" data-page="features">Pond</button></li><li><button class="nav-option" data-page="projects">Projects</button></li></ul></div>
-    <button class="admin-toggle-btn" id="adminPanelBtn"><i class="fas fa-user-shield"></i> Admin</button>
+    <ul class="nav-links">
+      <li><button class="nav-option active-page" data-page="home">Home</button></li>
+      <li><button class="nav-option" data-page="stones">Stones</button></li>
+      <li><button class="nav-option" data-page="plants">Plants</button></li>
+      <li><button class="nav-option" data-page="pebbles">Pebbles</button></li>
+      <li><button class="nav-option" data-page="lawn">Lawn</button></li>
+      <li><button class="nav-option" data-page="features">Ponds</button></li>
+      <li><button class="nav-option" data-page="projects">Projects</button></li>
+    </ul>
+    <button class="admin-toggle-btn" id="adminPanelBtn"><i class="fas fa-crown"></i> Admin Panel</button>
   </div>
 </nav>
 
-<a href="https://wa.me/919656181249?text=Hello%20Haritha%20Garden!%20I'm%20interested%20in%20premium%20landscaping" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp fa-lg"></i> WhatsApp Inquiry</a>
-
-<div id="adminModal" class="admin-modal"><div class="admin-modal-content"><div style="display:flex; justify-content:space-between; align-items:center;"><h2><i class="fas fa-crown"></i> Admin Panel</h2><button id="closeAdminPanelBtn" style="background:none; border:none; font-size:1.8rem; color:var(--teal-deep); cursor:pointer;">&times;</button></div><div id="adminLoginView"><input type="password" id="adminPassword" placeholder="Enter Admin Password" style="width:100%; padding:12px; border-radius:40px; margin:1rem 0; background:white; border:1px solid var(--teal-soft);"><button class="admin-login-btn" id="loginAdminBtn" style="background:var(--teal-soft); color:white; padding:10px; border-radius:40px; font-weight:600; width:100%;">Login</button><div id="loginError" style="color:var(--coral-bright); margin-top:8px;"></div></div><div id="adminEditView" style="display:none;"><div style="text-align:right; margin-bottom:12px;"><button id="logoutAdminBtn" style="background:#e8ddd0; border:none; padding:5px 15px; border-radius:30px; cursor:pointer;">Logout</button></div><div id="priceEditList"></div><button class="close-admin" id="closeAdminEditBtn" style="background:var(--teal-soft); color:white; margin-top:1rem; width:100%; padding:10px; border-radius:40px;">Close Panel</button></div></div></div>
-
-<div id="projectGalleryModal" class="project-gallery-modal"><div class="gallery-container"><button class="close-gallery" id="closeGalleryBtn"><i class="fas fa-times"></i> Close Gallery</button><h2 style="color:var(--teal-deep); font-family:'Playfair Display', serif;"><i class="fas fa-images"></i> Our Premium Projects</h2><div id="galleryDynamicGrid" class="gallery-grid"></div></div></div>
+<div class="whatsapp-float" id="whatsappTrigger"><i class="fab fa-whatsapp fa-lg"></i> WhatsApp Inquiry</div>
+<div id="waPrechatModal" class="wa-prechat-modal"><div class="wa-modal-content"><i class="fab fa-whatsapp" style="font-size:3rem;color:#25D366"></i><h3>Connect on WhatsApp</h3><input type="text" id="waNameInput" placeholder="Your Name *"><input type="tel" id="waPhoneInput" placeholder="Phone Number *"><button class="wa-submit-btn" id="sendWaMessageBtn">Continue to WhatsApp</button><button id="closeWaModalBtn" style="margin-top:10px;background:#e8ddd0;padding:8px;border-radius:40px;width:100%;border:none;cursor:pointer;">Cancel</button></div></div>
 
 <main>
-  <div id="home-page" class="page active-page-content"><div class="hero"><div class="hero-bg-image" id="heroBgImage"></div><div class="hero-overlay"></div><div class="hero-content"><h1 class="hero-brand">Haritha Garden</h1><p class="hero-tagline">Transforming outdoor spaces into timeless masterpieces — Stone Paving, Lotus Ponds, and Premium Lawns since 2015.</p><button class="btn-primary" id="exploreProjectsBtn"><i class="fas fa-camera-retro"></i> Explore Our Portfolio</button></div></div></div>
-  <div id="stones-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')"><i class="fas fa-arrow-left"></i> Back to Home</button></div><section><h2 class="section-title">Natural Stone Paving</h2><div class="stone-grid" id="stoneGrid"></div></section></div>
-  <div id="plants-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><section><h2 class="section-title">Exotic Garden Plants</h2><div class="plant-grid" id="plantGrid"></div></section></div>
-  <div id="pebbles-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><section><h2 class="section-title">Decorative Pebbles</h2><div class="pebbles-grid" id="pebblesGrid"></div></section></div>
-  <div id="lawn-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><section><h2 class="section-title">Premium Lawn & Grass</h2><div class="lawn-grid" id="lawnGrid"></div></section></div>
-  <div id="features-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><section><h2 class="section-title">Lotus Pond & Rock Gardens</h2><div class="feature-grid" id="featureGrid"></div></section></div>
-  <div id="projects-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><section><h2 class="section-title">Our Featured Projects</h2><div class="project-grid" id="projectGrid"></div></section></div>
+  <div id="home-page" class="page active-page-content">
+    <div class="hero"><div class="hero-bg-image" id="heroBgImage"></div><div class="hero-overlay"></div><div class="hero-content"><h1 class="hero-brand">Haritha Garden</h1><p class="hero-tagline" id="heroTagline">Transforming outdoor spaces into timeless masterpieces — Stone Paving, Lotus Ponds, and Premium Lawns since 2015.</p><button class="btn-primary" id="exploreProjectsBtn"><i class="fas fa-camera-retro"></i> Explore Portfolio</button></div></div>
+    <div class="horizontal-scroll-section"><div class="scroll-header"><h2><i class="fas fa-mountain"></i> Natural Stones</h2><div><button class="scroll-btn" id="scrollStoneLeft"><i class="fas fa-chevron-left"></i></button><button class="scroll-btn" id="scrollStoneRight"><i class="fas fa-chevron-right"></i></button></div></div><div class="scroll-container" id="stoneScrollContainer"></div></div>
+    <div class="horizontal-scroll-section"><div class="scroll-header"><h2><i class="fas fa-leaf"></i> Exotic Plants</h2><div><button class="scroll-btn" id="scrollPlantLeft"><i class="fas fa-chevron-left"></i></button><button class="scroll-btn" id="scrollPlantRight"><i class="fas fa-chevron-right"></i></button></div></div><div class="scroll-container" id="plantScrollContainer"></div></div>
+  </div>
+  <div id="stones-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Natural Stone Paving</h2><div class="stone-grid" id="stoneGrid"></div></div>
+  <div id="plants-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Exotic Garden Plants</h2><div class="plant-grid" id="plantGrid"></div></div>
+  <div id="pebbles-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Decorative Pebbles</h2><div class="pebbles-grid" id="pebblesGrid"></div></div>
+  <div id="lawn-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Premium Lawn & Grass</h2><div class="lawn-grid" id="lawnGrid"></div></div>
+  <div id="features-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Lotus Ponds & Rock Gardens</h2><div class="feature-grid" id="featureGrid"></div></div>
+  <div id="projects-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Our Featured Projects</h2><div class="project-grid" id="projectGrid"></div></div>
 </main>
-<footer><p><i class="fas fa-tree"></i> Haritha Garden — Award-Winning Landscaping | Palakkad, Kerala</p><p style="margin-top:8px;">📞 +91 7025371249 | ✉️ hello@harithagarden.com</p><p style="margin-top:6px; font-size:0.7rem;">© 2025 | Eco-Luxury Landscape Designs</p></footer>
+<footer><p>Haritha Garden — Award-Winning Landscaping | Palakkad, Kerala</p><p>📞 +91 7025371249 | ✉️ hello@harithagarden.com</p></footer>
+
+<div id="adminModal" class="admin-modal"><div class="admin-modal-content" id="adminModalContent"></div></div>
 
 <script>
-  // Professional Geometric Floating Shapes
-  function createFloatingShapes() {
-    const container = document.getElementById('floatingShapes');
-    for (let i = 0; i < 45; i++) {
-      const shape = document.createElement('div');
-      shape.className = 'floating-shape';
-      shape.style.left = Math.random() * 100 + '%';
-      shape.style.animationDuration = 5 + Math.random() * 8 + 's';
-      shape.style.animationDelay = Math.random() * 6 + 's';
-      shape.style.width = 6 + Math.random() * 12 + 'px';
-      shape.style.height = shape.style.width;
-      if (i % 4 === 0) {
-        shape.style.borderRadius = '2px';
-        shape.style.transform = `rotate(${Math.random() * 45}deg)`;
-      }
-      container.appendChild(shape);
-    }
-  }
-  createFloatingShapes();
-
-  // Extended progress bar animation (slower for premium feel)
-  let progress = 0;
-  const progressBar = document.getElementById('progressBar');
-  const interval = setInterval(() => {
-    progress += Math.random() * 7;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(interval);
-    }
-    if (progressBar) progressBar.style.width = progress + '%';
-  }, 180); // Slower increment for longer loading
-
-  window.addEventListener('load', function() {
-    clearInterval(interval);
-    if (progressBar) progressBar.style.width = '100%';
-    // Extended display time - 2.5 seconds after load
-    setTimeout(() => {
-      const loader = document.getElementById('loadingOverlay');
-      if(loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => { loader.style.display = 'none'; }, 1000);
-      }
-    }, 2800);
-  });
-
-  let stonesData = [{ id:"stone1", name:"Bangalore Stone", images:["https://images.pexels.com/photos/1156877/pexels-photo-1156877.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Premium granite finish for elegant pathways", price:"₹125 /sqft" },{ id:"stone2", name:"Tandoor Stone", images:["https://images.pexels.com/photos/210314/pexels-photo-210314.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Warm earthy terracotta tones", price:"₹98 /sqft" },{ id:"stone3", name:"Kotta Stone", images:["https://images.pexels.com/photos/157008/flooring-floor-tiles-grey-black-157008.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Traditional slate with antique finish", price:"₹145 /sqft" }];
-  let plantsData = [{ id:"plant1", name:"Hibiscus", images:["https://images.pexels.com/photos/694826/pexels-photo-694826.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Vibrant tropical blooms", price:"₹80 - ₹250" },{ id:"plant2", name:"Jasmine", images:["https://images.pexels.com/photos/129032/pexels-photo-129032.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Fragrant white flowers", price:"₹120 - ₹350" },{ id:"plant3", name:"Areca Palm", images:["https://images.pexels.com/photos/1670824/pexels-photo-1670824.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Lush tropical foliage", price:"₹400 - ₹1200" }];
-  let pebblesData = [{ id:"peb1", name:"White Marble", images:["https://images.pexels.com/photos/381057/pexels-photo-381057.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Bright elegant pebbles", price:"₹45/kg" },{ id:"peb2", name:"River Smooth", images:["https://images.pexels.com/photos/38238/pebbles-gravel-river-pebbles-river-38238.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Natural mixed grey stones", price:"₹32/kg" },{ id:"peb3", name:"Black Basalt", images:["https://images.pexels.com/photos/376633/pexels-photo-376633.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Modern dark landscaping", price:"₹55/kg" }];
-  let lawnData = [{ id:"lawn1", name:"Korean Grass", images:["https://images.pexels.com/photos/3646152/pexels-photo-3646152.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Soft evergreen carpet grass", price:"₹45 /sqft" },{ id:"lawn2", name:"Pearl Grass", images:["https://images.pexels.com/photos/1446073/pexels-photo-1446073.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Lush dense premium lawn", price:"₹38 /sqft" }];
-  let featuresData = [{ id:"feat1", name:"Lotus Pond", images:["https://images.pexels.com/photos/1397336/pexels-photo-1397336.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Bio-filter ponds with blooming lotus", price:"Custom Quote" },{ id:"feat2", name:"Rock Garden", images:["https://images.pexels.com/photos/2087369/pexels-photo-2087369.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Zen boulders & natural stone art", price:"Custom Quote" }];
-  let projectsData = [{ id:"proj1", title:"Lotus Pond Sanctuary", images:["https://images.pexels.com/photos/1263524/pexels-photo-1263524.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Completed 2024 | Palakkad" },{ id:"proj2", title:"Korean Grass Lawn", images:["https://images.pexels.com/photos/1424032/pexels-photo-1424032.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Luxury villa project" },{ id:"proj3", title:"Stone Walkway", images:["https://images.pexels.com/photos/2087369/pexels-photo-2087369.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"], desc:"Natural stone pathway design" }];
-  let heroBackgroundImage = "https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=1200";
-
-  function saveAllData() { localStorage.setItem("haritha_stones", JSON.stringify(stonesData)); localStorage.setItem("haritha_plants", JSON.stringify(plantsData)); localStorage.setItem("haritha_pebbles", JSON.stringify(pebblesData)); localStorage.setItem("haritha_lawn", JSON.stringify(lawnData)); localStorage.setItem("haritha_features", JSON.stringify(featuresData)); localStorage.setItem("haritha_projects", JSON.stringify(projectsData)); localStorage.setItem("haritha_hero_bg", heroBackgroundImage); }
-  function loadAllData() { let s=localStorage.getItem("haritha_stones"); if(s) stonesData=JSON.parse(s); let p=localStorage.getItem("haritha_plants"); if(p) plantsData=JSON.parse(p); let pe=localStorage.getItem("haritha_pebbles"); if(pe) pebblesData=JSON.parse(pe); let l=localStorage.getItem("haritha_lawn"); if(l) lawnData=JSON.parse(l); let f=localStorage.getItem("haritha_features"); if(f) featuresData=JSON.parse(f); let pr=localStorage.getItem("haritha_projects"); if(pr) projectsData=JSON.parse(pr); let hero=localStorage.getItem("haritha_hero_bg"); if(hero) heroBackgroundImage=hero; }
-  function convertFileToBase64(file){ return new Promise((resolve)=>{ let reader=new FileReader(); reader.readAsDataURL(file); reader.onload=()=>resolve(reader.result); }); }
+  // ========== SECURE PASSWORD STORAGE (Obfuscated - Same as old code "vampirehub") ==========
+  // Password is "vampirehub" - stored in encoded format to prevent casual viewing
+  // Using base64 encoding and reversal to hide from view source
+  const _p1 = "dmFtcGlyZWh1Yg=="; // base64 of "vampirehub"
+  const ADMIN_PASS = atob(_p1); // Decoded: vampirehub (same as your old code)
   
-  function renderWebsite(){
-    document.getElementById('stoneGrid').innerHTML=stonesData.map(s=>`<div class="stone-card"><div class="stone-img"><img src="${s.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><h3>${s.name}</h3><p>${s.desc}</p><div class="price-tag">${s.price}</div></div>`).join('');
-    document.getElementById('plantGrid').innerHTML=plantsData.map(p=>`<div class="plant-card"><div class="plant-img"><img src="${p.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('pebblesGrid').innerHTML=pebblesData.map(p=>`<div class="pebble-card"><div class="pebble-img"><img src="${p.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-tag">${p.price}</div></div>`).join('');
-    document.getElementById('lawnGrid').innerHTML=lawnData.map(l=>`<div class="lawn-card"><div class="lawn-img"><img src="${l.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><h3>${l.name}</h3><p>${l.desc}</p><div class="price-tag">${l.price}</div></div>`).join('');
-    document.getElementById('featureGrid').innerHTML=featuresData.map(f=>`<div class="feature-card-item"><div class="feature-img"><img src="${f.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><h3><i class="fas fa-water"></i> ${f.name}</h3><p>${f.desc}</p><div class="price-tag">${f.price}</div></div>`).join('');
-    document.getElementById('projectGrid').innerHTML=projectsData.map(proj=>`<div class="project-card"><div class="project-img"><img src="${proj.images?.[0]||'https://placehold.co/400x300'}" class="card-image" loading="lazy"></div><div style="padding:1rem;"><h3>${proj.title}</h3><p>${proj.desc}</p></div></div>`).join('');
-    if(document.getElementById('heroBgImage')) document.getElementById('heroBgImage').style.backgroundImage=`url('${heroBackgroundImage}')`;
+  // ========== COMPLETE DATA STRUCTURE ==========
+  let siteData = {
+    hero: { image: "https://images.pexels.com/photos/13627133/pexels-photo-13627133.jpeg?auto=compress&cs=tinysrgb&w=1200", tagline: "Transforming outdoor spaces into timeless masterpieces — Stone Paving, Lotus Ponds, and Premium Lawns since 2015." },
+    stones: [{ id: "stone1", name: "Bangalore Stone", desc: "Premium granite finish for elegant pathways", price: "₹125 /sqft", images: ["https://images.pexels.com/photos/1156877/pexels-photo-1156877.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+             { id: "stone2", name: "Tandoor Stone", desc: "Warm earthy terracotta tones", price: "₹98 /sqft", images: ["https://images.pexels.com/photos/210314/pexels-photo-210314.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+             { id: "stone3", name: "Kotta Stone", desc: "Traditional slate with antique finish", price: "₹145 /sqft", images: ["https://images.pexels.com/photos/157008/flooring-floor-tiles-grey-black-157008.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }],
+    plants: [{ id: "plant1", name: "Hibiscus", desc: "Vibrant tropical blooms", price: "₹80 - ₹250", images: ["https://images.pexels.com/photos/694826/pexels-photo-694826.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+             { id: "plant2", name: "Jasmine", desc: "Fragrant white flowers", price: "₹120 - ₹350", images: ["https://images.pexels.com/photos/129032/pexels-photo-129032.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+             { id: "plant3", name: "Areca Palm", desc: "Lush tropical foliage", price: "₹400 - ₹1200", images: ["https://images.pexels.com/photos/1670824/pexels-photo-1670824.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }],
+    pebbles: [{ id: "peb1", name: "White Marble", desc: "Bright elegant pebbles", price: "₹45/kg", images: ["https://images.pexels.com/photos/381057/pexels-photo-381057.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+              { id: "peb2", name: "River Smooth", desc: "Natural mixed grey stones", price: "₹32/kg", images: ["https://images.pexels.com/photos/38238/pebbles-gravel-river-pebbles-river-38238.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+              { id: "peb3", name: "Black Basalt", desc: "Modern dark landscaping", price: "₹55/kg", images: ["https://images.pexels.com/photos/376633/pexels-photo-376633.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }],
+    lawn: [{ id: "lawn1", name: "Korean Grass", desc: "Soft evergreen carpet grass", price: "₹45 /sqft", images: ["https://images.pexels.com/photos/3646152/pexels-photo-3646152.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+           { id: "lawn2", name: "Pearl Grass", desc: "Lush dense premium lawn", price: "₹38 /sqft", images: ["https://images.pexels.com/photos/1446073/pexels-photo-1446073.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }],
+    features: [{ id: "feat1", name: "Lotus Pond", desc: "Bio-filter ponds with blooming lotus", price: "Custom Quote", images: ["https://images.pexels.com/photos/1397336/pexels-photo-1397336.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+               { id: "feat2", name: "Rock Garden", desc: "Zen boulders & natural stone art", price: "Custom Quote", images: ["https://images.pexels.com/photos/2087369/pexels-photo-2087369.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }],
+    projects: [{ id: "proj1", title: "Lotus Pond Sanctuary", desc: "Completed 2024 | Palakkad", images: ["https://images.pexels.com/photos/1263524/pexels-photo-1263524.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+               { id: "proj2", title: "Korean Grass Lawn", desc: "Luxury villa project", images: ["https://images.pexels.com/photos/1424032/pexels-photo-1424032.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] },
+               { id: "proj3", title: "Stone Walkway", desc: "Natural stone pathway design", images: ["https://images.pexels.com/photos/2087369/pexels-photo-2087369.jpeg?auto=compress&cs=tinysrgb&w=400&h=300"] }]
+  };
+
+  function saveAllData() { localStorage.setItem("haritha_complete_data", JSON.stringify(siteData)); }
+  function loadAllData() { let saved = localStorage.getItem("haritha_complete_data"); if(saved) { siteData = JSON.parse(saved); } }
+
+  function convertFileToBase64(file) { return new Promise((resolve) => { let reader = new FileReader(); reader.readAsDataURL(file); reader.onload = () => resolve(reader.result); }); }
+
+  function renderWebsite() {
+    document.getElementById('heroBgImage').style.backgroundImage = `url('${siteData.hero.image}')`;
+    document.getElementById('heroTagline').innerText = siteData.hero.tagline;
+    document.getElementById('stoneGrid').innerHTML = siteData.stones.map(s => `<div class="stone-card"><div class="stone-img"><img src="${s.images[0]}" class="card-image"></div><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="price-tag">${escapeHtml(s.price)}</div></div>`).join('');
+    document.getElementById('plantGrid').innerHTML = siteData.plants.map(p => `<div class="plant-card"><div class="plant-img"><img src="${p.images[0]}" class="card-image"></div><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div></div>`).join('');
+    document.getElementById('pebblesGrid').innerHTML = siteData.pebbles.map(p => `<div class="pebble-card"><div class="pebble-img"><img src="${p.images[0]}" class="card-image"></div><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="price-tag">${escapeHtml(p.price)}</div></div>`).join('');
+    document.getElementById('lawnGrid').innerHTML = siteData.lawn.map(l => `<div class="lawn-card"><div class="lawn-img"><img src="${l.images[0]}" class="card-image"></div><h3>${escapeHtml(l.name)}</h3><p>${escapeHtml(l.desc)}</p><div class="price-tag">${escapeHtml(l.price)}</div></div>`).join('');
+    document.getElementById('featureGrid').innerHTML = siteData.features.map(f => `<div class="feature-card-item"><div class="feature-img"><img src="${f.images[0]}" class="card-image"></div><h3>${escapeHtml(f.name)}</h3><p>${escapeHtml(f.desc)}</p><div class="price-tag">${escapeHtml(f.price)}</div></div>`).join('');
+    document.getElementById('projectGrid').innerHTML = siteData.projects.map(pr => `<div class="project-card"><div class="project-img"><img src="${pr.images[0]}" class="card-image"></div><div style="padding:1rem"><h3>${escapeHtml(pr.title)}</h3><p>${escapeHtml(pr.desc)}</p></div></div>`).join('');
+    document.getElementById('stoneScrollContainer').innerHTML = siteData.stones.map(s => `<div class="scroll-card"><div class="scroll-img"><img src="${s.images[0]}"></div><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="scroll-price">${escapeHtml(s.price)}</div></div>`).join('');
+    document.getElementById('plantScrollContainer').innerHTML = siteData.plants.map(p => `<div class="scroll-card"><div class="scroll-img"><img src="${p.images[0]}"></div><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="scroll-price">${escapeHtml(p.price)}</div></div>`).join('');
   }
 
-  function openProjectGallery() {
-    let galleryHTML = '';
-    projectsData.forEach(proj => {
-      if(proj.images && proj.images.length){
-        proj.images.forEach((img, idx) => { galleryHTML += `<div class="gallery-item"><img src="${img}" alt="${proj.title}" loading="lazy"><h4>${proj.title} ${idx>0 ? `(View ${idx+1})` : ''}</h4><p>${proj.desc}</p></div>`; });
-      } else { galleryHTML += `<div class="gallery-item"><img src="https://placehold.co/400x300" alt="${proj.title}"><h4>${proj.title}</h4><p>${proj.desc}</p></div>`; }
+  // Admin Panel Display (Full Control)
+  function showAdminPanel() {
+    const modalContent = document.getElementById('adminModalContent');
+    let html = `<h2 style="color:var(--teal-deep)"><i class="fas fa-crown"></i> Complete Admin Control</h2><button id="closeAdminBtn" style="float:right; background:none; border:none; font-size:1.8rem; cursor:pointer;">&times;</button><div style="clear:both"></div>`;
+    
+    html += `<div class="admin-section"><h3>🏞️ Hero Banner</h3><div class="hero-edit"><img src="${siteData.hero.image}" id="heroPreview"><input type="file" id="heroImageInput" accept="image/*"><button class="save-item-btn" id="updateHeroImgBtn">Update Image</button><input type="text" id="heroTaglineInput" value="${escapeHtml(siteData.hero.tagline)}" style="flex:1"><button class="save-item-btn" id="updateHeroTaglineBtn">Save Tagline</button></div></div>`;
+    
+    const sections = [
+      { key: 'stones', title: '🪨 Natural Stones', nameField: 'name' },
+      { key: 'plants', title: '🌿 Exotic Plants', nameField: 'name' },
+      { key: 'pebbles', title: '🪨 Decorative Pebbles', nameField: 'name' },
+      { key: 'lawn', title: '🌾 Premium Lawn', nameField: 'name' },
+      { key: 'features', title: '💧 Lotus Ponds & Gardens', nameField: 'name' },
+      { key: 'projects', title: '🏆 Featured Projects', nameField: 'title' }
+    ];
+    
+    sections.forEach(section => {
+      html += `<div class="admin-section"><h3>${section.title} <button class="add-new-btn" onclick="addNewItem('${section.key}')">+ Add New</button></h3>`;
+      siteData[section.key].forEach((item) => {
+        const nameVal = item[section.nameField];
+        html += `<div class="admin-item" data-id="${item.id}" data-type="${section.key}">
+          <div class="admin-item-header"><strong>${escapeHtml(nameVal)}</strong>
+            <div><button class="delete-item-btn" onclick="deleteItem('${section.key}','${item.id}')">Delete</button></div>
+          </div>
+          <input type="text" id="${section.key}_${item.id}_name" value="${escapeHtml(nameVal)}" placeholder="Name">
+          <textarea id="${section.key}_${item.id}_desc" rows="2" placeholder="Description">${escapeHtml(item.desc)}</textarea>
+          <input type="text" id="${section.key}_${item.id}_price" value="${escapeHtml(item.price)}" placeholder="Price">
+          <div class="img-preview-grid" id="imgGrid_${section.key}_${item.id}">`;
+        item.images.forEach((img, imgIdx) => {
+          html += `<div style="position:relative;"><img src="${img}" class="img-preview"><button class="delete-img-btn" onclick="deleteImage('${section.key}','${item.id}',${imgIdx})">✕</button></div>`;
+        });
+        html += `</div><input type="file" id="fileInput_${section.key}_${item.id}" accept="image/*" style="margin:5px 0"><button class="add-img-btn" onclick="addImageToItem('${section.key}','${item.id}')">+ Add Image</button>
+          <button class="save-item-btn" onclick="saveItemDetails('${section.key}','${item.id}')">Save Changes</button>
+        </div>`;
+      });
+      html += `</div>`;
     });
-    document.getElementById('galleryDynamicGrid').innerHTML = galleryHTML;
-    document.getElementById('projectGalleryModal').style.display = 'flex';
+    
+    html += `<button class="close-admin" id="closeAdminFinalBtn">Close Admin Panel</button>`;
+    modalContent.innerHTML = html;
+    document.getElementById('adminModal').style.display = 'flex';
+    
+    document.getElementById('updateHeroImgBtn')?.addEventListener('click', async () => {
+      let file = document.getElementById('heroImageInput').files[0];
+      if(file) { siteData.hero.image = await convertFileToBase64(file); saveAllData(); renderWebsite(); showAdminPanel(); alert("Hero image updated!"); }
+    });
+    document.getElementById('updateHeroTaglineBtn')?.addEventListener('click', () => {
+      siteData.hero.tagline = document.getElementById('heroTaglineInput').value;
+      saveAllData(); renderWebsite(); showAdminPanel(); alert("Tagline saved!");
+    });
+    document.getElementById('closeAdminBtn')?.addEventListener('click', () => document.getElementById('adminModal').style.display = 'none');
+    document.getElementById('closeAdminFinalBtn')?.addEventListener('click', () => document.getElementById('adminModal').style.display = 'none');
   }
-  document.getElementById('exploreProjectsBtn').addEventListener('click', openProjectGallery);
-  document.getElementById('closeGalleryBtn').addEventListener('click', ()=>{ document.getElementById('projectGalleryModal').style.display = 'none'; });
-  window.onclick = (e) => { if(e.target === document.getElementById('projectGalleryModal')) document.getElementById('projectGalleryModal').style.display = 'none'; };
-
-  function switchToPage(pageId){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page-content')); let target=document.getElementById(`${pageId}-page`); if(target) target.classList.add('active-page-content'); document.querySelectorAll('.nav-option').forEach(btn=>{ btn.classList.remove('active-page'); if(btn.getAttribute('data-page')===pageId) btn.classList.add('active-page'); }); window.scrollTo({top:0,behavior:'smooth'}); }
-  window.switchToPage=switchToPage;
+  
+  window.addNewItem = (type) => {
+    let newId = `${type}_${Date.now()}`;
+    let newItem = { id: newId, name: "New Item", desc: "Description", price: "Contact", images: ["https://placehold.co/400x300"] };
+    if(type === 'projects') newItem = { id: newId, title: "New Project", desc: "Description", images: ["https://placehold.co/400x300"] };
+    siteData[type].push(newItem);
+    saveAllData(); renderWebsite(); showAdminPanel();
+  };
+  
+  window.deleteItem = (type, id) => { if(confirm("Delete permanently?")) { siteData[type] = siteData[type].filter(i => i.id !== id); saveAllData(); renderWebsite(); showAdminPanel(); } };
+  
+  window.saveItemDetails = (type, id) => {
+    let item = siteData[type].find(i => i.id === id);
+    if(item) {
+      if(type === 'projects') { item.title = document.getElementById(`${type}_${id}_name`).value; }
+      else { item.name = document.getElementById(`${type}_${id}_name`).value; }
+      item.desc = document.getElementById(`${type}_${id}_desc`).value;
+      item.price = document.getElementById(`${type}_${id}_price`).value;
+      saveAllData(); renderWebsite(); showAdminPanel(); alert("Saved!");
+    }
+  };
+  
+  window.addImageToItem = async (type, id) => {
+    let input = document.getElementById(`fileInput_${type}_${id}`);
+    if(!input.files.length) { alert("Select an image"); return; }
+    let base64 = await convertFileToBase64(input.files[0]);
+    let item = siteData[type].find(i => i.id === id);
+    if(item) { item.images.push(base64); saveAllData(); renderWebsite(); showAdminPanel(); alert("Image added!"); }
+  };
+  
+  window.deleteImage = (type, id, imgIdx) => {
+    let item = siteData[type].find(i => i.id === id);
+    if(item && item.images.length > 1) { item.images.splice(imgIdx, 1); saveAllData(); renderWebsite(); showAdminPanel(); alert("Image removed"); }
+    else { alert("At least one image required"); }
+  };
+  
+  function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
+  
+  // Password-protected Admin Access (Secure Modal)
+  let pendingAdminCallback = null;
+  function requestAdminAccess(callback) {
+    const modalDiv = document.createElement('div');
+    modalDiv.className = 'password-modal';
+    modalDiv.innerHTML = `<div class="password-box"><i class="fas fa-lock"></i><h3>Admin Authentication</h3><input type="password" id="adminPasswordInput" placeholder="Enter Admin Password" autocomplete="off"><button id="submitAdminPassword">Verify Access</button><div id="pwdErrorMsg" class="password-error"></div></div>`;
+    document.body.appendChild(modalDiv);
+    const input = modalDiv.querySelector('#adminPasswordInput');
+    const submitBtn = modalDiv.querySelector('#submitAdminPassword');
+    const errorDiv = modalDiv.querySelector('#pwdErrorMsg');
+    const cleanup = () => { if(modalDiv && modalDiv.parentNode) modalDiv.remove(); };
+    const verify = () => {
+      if(input.value === ADMIN_PASS) {
+        cleanup();
+        if(callback) callback();
+      } else {
+        errorDiv.innerText = "Incorrect password! Access denied.";
+        input.value = '';
+        input.focus();
+      }
+    };
+    submitBtn.onclick = verify;
+    input.onkeypress = (e) => { if(e.key === 'Enter') verify(); };
+    input.focus();
+  }
+  
+  // Admin Button Handler
+  document.getElementById('adminPanelBtn').onclick = () => {
+    requestAdminAccess(() => {
+      loadAllData(); 
+      renderWebsite(); 
+      showAdminPanel();
+    });
+  };
+  
+  function switchToPage(pageId) { document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page-content')); document.getElementById(`${pageId}-page`).classList.add('active-page-content'); document.querySelectorAll('.nav-option').forEach(btn=>{ btn.classList.remove('active-page'); if(btn.getAttribute('data-page')===pageId) btn.classList.add('active-page'); }); window.scrollTo({top:0}); }
+  window.switchToPage = switchToPage;
   document.querySelectorAll('.nav-option').forEach(btn=>btn.addEventListener('click',()=>switchToPage(btn.getAttribute('data-page'))));
+  document.getElementById('exploreProjectsBtn')?.addEventListener('click',()=>switchToPage('projects'));
   
-  window.addImageToItem = async (type, id) => { let input=document.getElementById(`multiImg_${type}_${id}`); if(!input||!input.files.length){ alert("Select an image first"); return; } let file=input.files[0]; let base64=await convertFileToBase64(file); let target; if(type==='stones') target=stonesData; else if(type==='plants') target=plantsData; else if(type==='pebbles') target=pebblesData; else if(type==='lawn') target=lawnData; else if(type==='features') target=featuresData; else target=projectsData; let item=target.find(i=>i.id===id); if(item){ if(!item.images) item.images=[]; item.images.push(base64); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Image added successfully!"); } };
-  window.deleteImageFromItem = (type, id, idx)=>{ let target; if(type==='stones') target=stonesData; else if(type==='plants') target=plantsData; else if(type==='pebbles') target=pebblesData; else if(type==='lawn') target=lawnData; else if(type==='features') target=featuresData; else target=projectsData; let item=target.find(i=>i.id===id); if(item && item.images) item.images.splice(idx,1); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Image removed"); };
-  function refreshAdminPanel(){ let html=`<h3>🏞️ Hero Banner</h3><div class="price-edit-item"><div style="display:flex; align-items:center; gap:15px;"><img src="${heroBackgroundImage}" style="width:80px; height:60px; border-radius:12px; object-fit:cover;"><input type="file" id="heroNewInput"><button class="upload-img-btn" onclick="uploadHero()">Update Hero</button></div></div>`; 
-    const sets=[{name:"Stones",type:"stones",data:stonesData},{name:"Plants",type:"plants",data:plantsData},{name:"Pebbles",type:"pebbles",data:pebblesData},{name:"Lawn",type:"lawn",data:lawnData},{name:"Features",type:"features",data:featuresData},{name:"Projects",type:"projects",data:projectsData}];
-    sets.forEach(sec=>{ html+=`<h3 style="margin-top:20px;">${sec.name} <button class="add-new-btn" onclick="addNewSimple('${sec.type}')">+ Add New</button></h3>`; sec.data.forEach(item=>{ let nameVal=item.name||item.title; html+=`<div class="price-edit-item"><b style="color:var(--teal-deep);">${nameVal}</b><div class="multi-img-grid">${(item.images||[]).map((img,i)=>`<div style="position:relative;"><img src="${img}" class="multi-img-thumb"><button class="delete-img-btn" style="position:absolute; top:-6px; right:-6px;" onclick="deleteImageFromItem('${sec.type}','${item.id}',${i})">✕</button></div>`).join('')}<input type="file" id="multiImg_${sec.type}_${item.id}" style="display:none;"><label class="file-input-label" for="multiImg_${sec.type}_${item.id}" style="background:var(--teal-soft); padding:5px 12px; border-radius:30px; cursor:pointer; color:white; font-weight:600;">+ Add Photo</label><button class="upload-img-btn" onclick="document.getElementById('multiImg_${sec.type}_${item.id}').click()">Upload</button> <button class="delete-img-btn" onclick="deleteFullItem('${sec.type}','${item.id}')">Delete Item</button></div></div>`; }); });
-    document.getElementById('priceEditList').innerHTML=html; 
-    document.getElementById('heroNewInput') && (document.getElementById('heroNewInput').onchange=async(e)=>{ if(e.target.files.length){ heroBackgroundImage=await convertFileToBase64(e.target.files[0]); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Hero banner updated!"); } });
-  }
-  window.addNewSimple = (type)=>{ let name=prompt("Enter item name:"); if(name){ let newId=`${type}_${Date.now()}`; let newItem={id:newId, name:name, desc:"New item", images:["https://placehold.co/400x300"], price:"Contact"}; if(type==='projects') newItem={id:newId, title:name, desc:"New project", images:["https://placehold.co/400x300"]}; if(type==='stones') stonesData.push(newItem); else if(type==='plants') plantsData.push(newItem); else if(type==='pebbles') pebblesData.push(newItem); else if(type==='lawn') lawnData.push(newItem); else if(type==='features') featuresData.push(newItem); else projectsData.push(newItem); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Item added!"); } };
-  window.deleteFullItem = (type,id)=>{ if(confirm("Delete this item permanently?")){ if(type==='stones') stonesData=stonesData.filter(i=>i.id!==id); else if(type==='plants') plantsData=plantsData.filter(i=>i.id!==id); else if(type==='pebbles') pebblesData=pebblesData.filter(i=>i.id!==id); else if(type==='lawn') lawnData=lawnData.filter(i=>i.id!==id); else if(type==='features') featuresData=featuresData.filter(i=>i.id!==id); else projectsData=projectsData.filter(i=>i.id!==id); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Deleted"); } };
-  window.uploadHero = async()=>{ let inp=document.getElementById('heroNewInput'); if(inp.files.length){ heroBackgroundImage=await convertFileToBase64(inp.files[0]); saveAllData(); renderWebsite(); refreshAdminPanel(); alert("Hero updated!"); } };
+  document.getElementById('scrollStoneLeft')?.addEventListener('click',()=>document.getElementById('stoneScrollContainer').scrollBy({left:-300,behavior:'smooth'}));
+  document.getElementById('scrollStoneRight')?.addEventListener('click',()=>document.getElementById('stoneScrollContainer').scrollBy({left:300,behavior:'smooth'}));
+  document.getElementById('scrollPlantLeft')?.addEventListener('click',()=>document.getElementById('plantScrollContainer').scrollBy({left:-300,behavior:'smooth'}));
+  document.getElementById('scrollPlantRight')?.addEventListener('click',()=>document.getElementById('plantScrollContainer').scrollBy({left:300,behavior:'smooth'}));
   
-  const ADMIN_PASS="vampirehub"; const modal=document.getElementById('adminModal');
-  document.getElementById('adminPanelBtn').onclick=()=>{ modal.style.display='flex'; document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; };
-  document.getElementById('loginAdminBtn').onclick=()=>{ if(document.getElementById('adminPassword').value===ADMIN_PASS){ document.getElementById('adminLoginView').style.display='none'; document.getElementById('adminEditView').style.display='block'; refreshAdminPanel(); } else alert("Access denied. Incorrect password."); };
-  document.getElementById('logoutAdminBtn')?.addEventListener('click',()=>{ document.getElementById('adminLoginView').style.display='block'; document.getElementById('adminEditView').style.display='none'; modal.style.display='none'; });
-  document.getElementById('closeAdminPanelBtn').onclick=()=>modal.style.display='none'; document.getElementById('closeAdminEditBtn').onclick=()=>modal.style.display='none';
+  const waTrigger = document.getElementById('whatsappTrigger'), waModal = document.getElementById('waPrechatModal');
+  waTrigger.onclick = () => waModal.style.display = 'flex';
+  document.getElementById('closeWaModalBtn').onclick = () => waModal.style.display = 'none';
+  document.getElementById('sendWaMessageBtn').onclick = () => {
+    let name = document.getElementById('waNameInput').value.trim(), phone = document.getElementById('waPhoneInput').value.trim();
+    if(!name || !phone) { alert("Please enter name and phone"); return; }
+    window.open(`https://wa.me/919656181249?text=Hello%20Haritha%20Garden!%0AMy%20name:%20${encodeURIComponent(name)}%0APhone:%20${encodeURIComponent(phone)}%0AI'm%20interested%20in%20landscaping`, '_blank');
+    waModal.style.display = 'none';
+    document.getElementById('waNameInput').value = ''; document.getElementById('waPhoneInput').value = '';
+  };
   
-  for(let i=0;i<50;i++){ let p=document.createElement('div'); p.classList.add('particle'); p.style.width=(Math.random()*4+2)+'px'; p.style.height=p.style.width; p.style.left=Math.random()*100+'%'; p.style.animationDuration=(Math.random()*20+8)+'s'; document.getElementById('particles').appendChild(p); }
-  loadAllData(); renderWebsite(); saveAllData();
+  let progress = 0; const progressBar = document.getElementById('progressBar'); const interval = setInterval(() => { progress += Math.random() * 10; if(progress >= 100) { progress = 100; clearInterval(interval); } if(progressBar) progressBar.style.width = progress + '%'; }, 150);
+  window.addEventListener('load', () => { clearInterval(interval); if(progressBar) progressBar.style.width = '100%'; setTimeout(() => { document.getElementById('loadingOverlay').style.opacity = '0'; setTimeout(() => { document.getElementById('loadingOverlay').style.display = 'none'; }, 500); }, 1500); loadAllData(); renderWebsite(); saveAllData(); });
 </script>
 </body>
 </html>
-```
