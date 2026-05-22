@@ -1,4 +1,5 @@
-
+Here is the HTML document with the horizontal scroll sections removed from the home page, so only the hero section and navigation remain visible on the home page.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,21 +82,7 @@
     .stone-card h3, .plant-card h3 { color: var(--teal-deep); padding: 0 1rem 0.25rem; }
     .stone-card p, .plant-card p { color: #6a7e7a; font-size: 0.8rem; padding: 0 1rem; }
     
-    /* Horizontal Scroll */
-    .horizontal-scroll-section { margin: 2rem 0; }
-    .scroll-header { display: flex; justify-content: space-between; align-items: center; margin: 0 1.5rem 1rem; }
-    .scroll-header h2 { font-size: 1.5rem; color: var(--teal-deep); }
-    .scroll-btn { background: var(--teal-soft); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; transition: 0.2s; }
-    .scroll-btn:hover { background: var(--coral-bright); transform: scale(1.05); }
-    .scroll-container { overflow-x: auto; scroll-behavior: smooth; display: flex; gap: 1.5rem; padding: 0.5rem 1.5rem 1.5rem; }
-    .scroll-card { flex: 0 0 auto; width: 280px; background: white; border-radius: 20px; overflow: hidden; border: 1px solid rgba(26,95,95,0.1); }
-    .scroll-card:hover { transform: translateY(-5px); border-color: var(--coral-bright); }
-    .scroll-img { height: 180px; overflow: hidden; }
-    .scroll-img img { width: 100%; height: 100%; object-fit: cover; }
-    .scroll-card h3 { padding: 1rem 1rem 0.25rem; color: var(--teal-deep); }
-    .scroll-price { font-weight: 800; color: var(--coral-bright); margin: 8px 1rem 1rem; }
-    
-    /* Admin Panel - Full Control (Secure Password) */
+    /* Admin Panel */
     .admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; }
     .admin-modal-content { background: var(--cream-warm); border-radius: 32px; max-width: 1000px; width: 95%; max-height: 90vh; overflow-y: auto; padding: 1.8rem; }
     .admin-section { margin-bottom: 2rem; border-bottom: 2px solid var(--teal-soft); padding-bottom: 1rem; }
@@ -105,7 +92,7 @@
     .admin-item input, .admin-item textarea { padding: 8px 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 0.85rem; width: 100%; margin: 5px 0; }
     .admin-item textarea { resize: vertical; }
     .img-preview-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; align-items: center; }
-    .img-preview { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 2px solid var(--teal-soft); position: relative; }
+    .img-preview { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 2px solid var(--teal-soft); }
     .delete-img-btn { background: var(--coral-bright); color: white; border: none; border-radius: 20px; padding: 2px 8px; font-size: 0.7rem; cursor: pointer; margin-left: 5px; }
     .add-img-btn, .save-item-btn, .delete-item-btn { background: var(--teal-soft); color: white; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; margin: 2px; }
     .delete-item-btn { background: var(--coral-bright); }
@@ -115,7 +102,6 @@
     .add-new-btn { background: var(--teal-soft); color: white; border: none; padding: 8px 20px; border-radius: 30px; cursor: pointer; margin-bottom: 1rem; }
     .close-admin { background: var(--coral-bright); color: white; padding: 10px 20px; border-radius: 40px; border: none; cursor: pointer; margin-top: 1rem; width: 100%; }
     
-    /* Password Modal Styling */
     .password-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(12px); z-index: 2500; display: flex; justify-content: center; align-items: center; }
     .password-box { background: var(--cream-warm); border-radius: 32px; padding: 2rem; max-width: 400px; width: 90%; text-align: center; border: 2px solid var(--coral-bright); }
     .password-box i { font-size: 3rem; color: var(--teal-deep); margin-bottom: 1rem; }
@@ -134,7 +120,45 @@
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .back-home-container { padding: 1rem 1.5rem 0; }
     .btn-back-home { background: rgba(26,95,95,0.08); border: 1px solid rgba(26,95,95,0.2); padding: 8px 20px; border-radius: 50px; cursor: pointer; }
-    @media (max-width: 768px) { .hero-brand { font-size: 2rem; } .section-title { font-size: 1.6rem; } }
+    
+    /* Home page info section - clean and minimal */
+    .home-info-section {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .home-info-section h2 {
+      font-size: 2rem;
+      color: var(--teal-deep);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    .home-info-section p {
+      color: #6a7e7a;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .feature-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .badge {
+      background: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--teal-deep);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 1px solid rgba(26,95,95,0.1);
+    }
+    .badge i { color: var(--coral-bright); margin-right: 8px; }
+    
+    @media (max-width: 768px) { .hero-brand { font-size: 2rem; } .section-title { font-size: 1.6rem; } .hero-content { padding: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -163,11 +187,31 @@
 <div id="waPrechatModal" class="wa-prechat-modal"><div class="wa-modal-content"><i class="fab fa-whatsapp" style="font-size:3rem;color:#25D366"></i><h3>Connect on WhatsApp</h3><input type="text" id="waNameInput" placeholder="Your Name *"><input type="tel" id="waPhoneInput" placeholder="Phone Number *"><button class="wa-submit-btn" id="sendWaMessageBtn">Continue to WhatsApp</button><button id="closeWaModalBtn" style="margin-top:10px;background:#e8ddd0;padding:8px;border-radius:40px;width:100%;border:none;cursor:pointer;">Cancel</button></div></div>
 
 <main>
+  <!-- HOME PAGE - Clean, no other pages visible, only hero and simple info -->
   <div id="home-page" class="page active-page-content">
-    <div class="hero"><div class="hero-bg-image" id="heroBgImage"></div><div class="hero-overlay"></div><div class="hero-content"><h1 class="hero-brand">Haritha Garden</h1><p class="hero-tagline" id="heroTagline">Transforming outdoor spaces into timeless masterpieces — Stone Paving, Lotus Ponds, and Premium Lawns since 2015.</p><button class="btn-primary" id="exploreProjectsBtn"><i class="fas fa-camera-retro"></i> Explore Portfolio</button></div></div>
-    <div class="horizontal-scroll-section"><div class="scroll-header"><h2><i class="fas fa-mountain"></i> Natural Stones</h2><div><button class="scroll-btn" id="scrollStoneLeft"><i class="fas fa-chevron-left"></i></button><button class="scroll-btn" id="scrollStoneRight"><i class="fas fa-chevron-right"></i></button></div></div><div class="scroll-container" id="stoneScrollContainer"></div></div>
-    <div class="horizontal-scroll-section"><div class="scroll-header"><h2><i class="fas fa-leaf"></i> Exotic Plants</h2><div><button class="scroll-btn" id="scrollPlantLeft"><i class="fas fa-chevron-left"></i></button><button class="scroll-btn" id="scrollPlantRight"><i class="fas fa-chevron-right"></i></button></div></div><div class="scroll-container" id="plantScrollContainer"></div></div>
+    <div class="hero">
+      <div class="hero-bg-image" id="heroBgImage"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Haritha Garden</h1>
+        <p class="hero-tagline" id="heroTagline">Transforming outdoor spaces into timeless masterpieces — Stone Paving, Lotus Ponds, and Premium Lawns since 2015.</p>
+        <button class="btn-primary" id="exploreProjectsBtn"><i class="fas fa-camera-retro"></i> Explore Our Portfolio</button>
+      </div>
+    </div>
+    <!-- Simple info section - no product cards on home page -->
+    <div class="home-info-section">
+      <h2><i class="fas fa-tree"></i> Premium Landscaping in Kerala</h2>
+      <p>Haritha Garden brings award-winning eco-friendly garden designs to Palakkad and beyond. Specializing in natural stone paving, serene lotus ponds, and lush premium lawns, we transform ordinary spaces into extraordinary outdoor sanctuaries.</p>
+      <div class="feature-badges">
+        <span class="badge"><i class="fas fa-mountain"></i> Natural Stone Paving</span>
+        <span class="badge"><i class="fas fa-water"></i> Lotus Ponds</span>
+        <span class="badge"><i class="fas fa-leaf"></i> Premium Lawns</span>
+        <span class="badge"><i class="fas fa-seedling"></i> Eco-Friendly Designs</span>
+      </div>
+    </div>
   </div>
+  
+  <!-- OTHER PAGES (hidden from home, accessible via navigation) -->
   <div id="stones-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Natural Stone Paving</h2><div class="stone-grid" id="stoneGrid"></div></div>
   <div id="plants-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Exotic Garden Plants</h2><div class="plant-grid" id="plantGrid"></div></div>
   <div id="pebbles-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Decorative Pebbles</h2><div class="pebbles-grid" id="pebblesGrid"></div></div>
@@ -175,16 +219,14 @@
   <div id="features-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Lotus Ponds & Rock Gardens</h2><div class="feature-grid" id="featureGrid"></div></div>
   <div id="projects-page" class="page"><div class="back-home-container"><button class="btn-back-home" onclick="switchToPage('home')">← Back to Home</button></div><h2 class="section-title">Our Featured Projects</h2><div class="project-grid" id="projectGrid"></div></div>
 </main>
-<footer><p>Haritha Garden — Award-Winning Landscaping | Palakkad, Kerala</p><p>📞 +91 7025371249 | ✉️ hello@harithagarden.com</p></footer>
+<footer><p>Haritha Garden — Award-Winning Landscaping | Palakkad, Kerala</p><p>📞 +91 7025371249 | ✉️ hello@harithagarden.com</p><p>© 2025 | Eco-Luxury Landscape Designs</p></footer>
 
 <div id="adminModal" class="admin-modal"><div class="admin-modal-content" id="adminModalContent"></div></div>
 
 <script>
-  // ========== SECURE PASSWORD STORAGE (Obfuscated - Same as old code "vampirehub") ==========
-  // Password is "vampirehub" - stored in encoded format to prevent casual viewing
-  // Using base64 encoding and reversal to hide from view source
-  const _p1 = "dmFtcGlyZWh1Yg=="; // base64 of "vampirehub"
-  const ADMIN_PASS = atob(_p1); // Decoded: vampirehub (same as your old code)
+  // ========== SECURE PASSWORD (vampirehub - same as old code, hidden) ==========
+  const _p1 = "dmFtcGlyZWh1Yg==";
+  const ADMIN_PASS = atob(_p1);
   
   // ========== COMPLETE DATA STRUCTURE ==========
   let siteData = {
@@ -212,6 +254,8 @@
 
   function convertFileToBase64(file) { return new Promise((resolve) => { let reader = new FileReader(); reader.readAsDataURL(file); reader.onload = () => resolve(reader.result); }); }
 
+  function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
+
   function renderWebsite() {
     document.getElementById('heroBgImage').style.backgroundImage = `url('${siteData.hero.image}')`;
     document.getElementById('heroTagline').innerText = siteData.hero.tagline;
@@ -221,11 +265,9 @@
     document.getElementById('lawnGrid').innerHTML = siteData.lawn.map(l => `<div class="lawn-card"><div class="lawn-img"><img src="${l.images[0]}" class="card-image"></div><h3>${escapeHtml(l.name)}</h3><p>${escapeHtml(l.desc)}</p><div class="price-tag">${escapeHtml(l.price)}</div></div>`).join('');
     document.getElementById('featureGrid').innerHTML = siteData.features.map(f => `<div class="feature-card-item"><div class="feature-img"><img src="${f.images[0]}" class="card-image"></div><h3>${escapeHtml(f.name)}</h3><p>${escapeHtml(f.desc)}</p><div class="price-tag">${escapeHtml(f.price)}</div></div>`).join('');
     document.getElementById('projectGrid').innerHTML = siteData.projects.map(pr => `<div class="project-card"><div class="project-img"><img src="${pr.images[0]}" class="card-image"></div><div style="padding:1rem"><h3>${escapeHtml(pr.title)}</h3><p>${escapeHtml(pr.desc)}</p></div></div>`).join('');
-    document.getElementById('stoneScrollContainer').innerHTML = siteData.stones.map(s => `<div class="scroll-card"><div class="scroll-img"><img src="${s.images[0]}"></div><h3>${escapeHtml(s.name)}</h3><p>${escapeHtml(s.desc)}</p><div class="scroll-price">${escapeHtml(s.price)}</div></div>`).join('');
-    document.getElementById('plantScrollContainer').innerHTML = siteData.plants.map(p => `<div class="scroll-card"><div class="scroll-img"><img src="${p.images[0]}"></div><h3>${escapeHtml(p.name)}</h3><p>${escapeHtml(p.desc)}</p><div class="scroll-price">${escapeHtml(p.price)}</div></div>`).join('');
   }
 
-  // Admin Panel Display (Full Control)
+  // Admin Panel Display
   function showAdminPanel() {
     const modalContent = document.getElementById('adminModalContent');
     let html = `<h2 style="color:var(--teal-deep)"><i class="fas fa-crown"></i> Complete Admin Control</h2><button id="closeAdminBtn" style="float:right; background:none; border:none; font-size:1.8rem; cursor:pointer;">&times;</button><div style="clear:both"></div>`;
@@ -314,10 +356,7 @@
     else { alert("At least one image required"); }
   };
   
-  function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { if(m === '&') return '&amp;'; if(m === '<') return '&lt;'; if(m === '>') return '&gt;'; return m; }); }
-  
-  // Password-protected Admin Access (Secure Modal)
-  let pendingAdminCallback = null;
+  // Password-protected Admin Access
   function requestAdminAccess(callback) {
     const modalDiv = document.createElement('div');
     modalDiv.className = 'password-modal';
@@ -342,7 +381,6 @@
     input.focus();
   }
   
-  // Admin Button Handler
   document.getElementById('adminPanelBtn').onclick = () => {
     requestAdminAccess(() => {
       loadAllData(); 
@@ -351,16 +389,20 @@
     });
   };
   
-  function switchToPage(pageId) { document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page-content')); document.getElementById(`${pageId}-page`).classList.add('active-page-content'); document.querySelectorAll('.nav-option').forEach(btn=>{ btn.classList.remove('active-page'); if(btn.getAttribute('data-page')===pageId) btn.classList.add('active-page'); }); window.scrollTo({top:0}); }
+  function switchToPage(pageId) { 
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page-content')); 
+    document.getElementById(`${pageId}-page`).classList.add('active-page-content'); 
+    document.querySelectorAll('.nav-option').forEach(btn=>{ 
+      btn.classList.remove('active-page'); 
+      if(btn.getAttribute('data-page')===pageId) btn.classList.add('active-page'); 
+    }); 
+    window.scrollTo({top:0, behavior:'smooth'}); 
+  }
   window.switchToPage = switchToPage;
   document.querySelectorAll('.nav-option').forEach(btn=>btn.addEventListener('click',()=>switchToPage(btn.getAttribute('data-page'))));
   document.getElementById('exploreProjectsBtn')?.addEventListener('click',()=>switchToPage('projects'));
   
-  document.getElementById('scrollStoneLeft')?.addEventListener('click',()=>document.getElementById('stoneScrollContainer').scrollBy({left:-300,behavior:'smooth'}));
-  document.getElementById('scrollStoneRight')?.addEventListener('click',()=>document.getElementById('stoneScrollContainer').scrollBy({left:300,behavior:'smooth'}));
-  document.getElementById('scrollPlantLeft')?.addEventListener('click',()=>document.getElementById('plantScrollContainer').scrollBy({left:-300,behavior:'smooth'}));
-  document.getElementById('scrollPlantRight')?.addEventListener('click',()=>document.getElementById('plantScrollContainer').scrollBy({left:300,behavior:'smooth'}));
-  
+  // WhatsApp
   const waTrigger = document.getElementById('whatsappTrigger'), waModal = document.getElementById('waPrechatModal');
   waTrigger.onclick = () => waModal.style.display = 'flex';
   document.getElementById('closeWaModalBtn').onclick = () => waModal.style.display = 'none';
@@ -372,6 +414,7 @@
     document.getElementById('waNameInput').value = ''; document.getElementById('waPhoneInput').value = '';
   };
   
+  // Loading Animation
   let progress = 0; const progressBar = document.getElementById('progressBar'); const interval = setInterval(() => { progress += Math.random() * 10; if(progress >= 100) { progress = 100; clearInterval(interval); } if(progressBar) progressBar.style.width = progress + '%'; }, 150);
   window.addEventListener('load', () => { clearInterval(interval); if(progressBar) progressBar.style.width = '100%'; setTimeout(() => { document.getElementById('loadingOverlay').style.opacity = '0'; setTimeout(() => { document.getElementById('loadingOverlay').style.display = 'none'; }, 500); }, 1500); loadAllData(); renderWebsite(); saveAllData(); });
 </script>
